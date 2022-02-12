@@ -1,14 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-export default function BotonMenuPrincipal() 
-{
-    
-    return (
+export default function BotonMenuPrincipal() {
+  return (
     <Link href="/">
-        <button className="regresar">
-            Menú Principal
-        </button>
+      <button className="regresar">Menú Principal</button>
     </Link>
-    ); 
-    
+  );
 }
