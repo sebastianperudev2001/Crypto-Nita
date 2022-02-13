@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -15,17 +14,15 @@ export default function Home() {
       <div className="page-content">
         <section id="primeraCara">
           <div className="row">
-            <img src="/logoNegro.png" className="logo" />
+            <img id="logo" src="/logoNegro.png" className="logo" />
           </div>
-          <div className="row">
-            <div class="card">
-              <div class="card-body">
+          <div className="row" id="cajita">
+            <div className="card mx-auto" id="intro">
+              <div className="card-body">
                 <Typewriter
                   options={{
                     strings: [
-                      'Welcome',
-                      'to',
-                      'Cryptonita.',
+                      'Welcome to Cryptonita.',
                       'Are you ready for the future?',
                       'Web 3.0 is here to change the world',
                     ],
@@ -35,42 +32,56 @@ export default function Home() {
                     loop: true,
                   }}
                 />
+
+                <a
+                  href="#segundaCara"
+                  className=" mt-4 btn btn-primary d-flex justify-content-center"
+                >
+                  <i className="bi bi-arrow-down"></i>
+                </a>
               </div>
-              <a href="#segundaCara" class="btn btn-primary">
-                <i className="bi bi-arrow-down"></i>
-              </a>
             </div>
           </div>
         </section>
-
+        <div id="linea"></div>
         <section id="segundaCara">
           <div className="tituloGrupo">
-            <h2>CrytoHackers Group</h2>
+            <h2 id="titulo">CrytoHackers Group</h2>
           </div>
 
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary">
+          <div
+            className="btn-group"
+            role="group"
+            aria-label="Basic example"
+            id="botones"
+          >
+            <button type="button" className="btn btn-primary botonesIntro">
               Iniciar Sesión
             </button>
 
-            <button type="button" class="btn btn-primary btn-success">
+            <button
+              type="button"
+              className="btn btn-primary btn-success botonesIntro"
+            >
               Registrar cuenta
             </button>
           </div>
 
-          <div class="card">
-            <div class="card-body">
-              <div id="nombre" className="texto">
+          <div className="card" id="footer">
+            <div className="card-body d-flex">
+              <div id="nombre" className="texto me-4">
                 CryptoHackers
               </div>
 
-              <div id="year" className="texto">
+              <div id="year" className="texto me-4">
                 2022
               </div>
 
               <div id="nosotros" className="textoAccionable">
                 <Link href="/nosotros">
-                  <a>Nosotros</a>
+                  <a id="presionable" className="me-4">
+                    Nosotros
+                  </a>
                 </Link>
               </div>
 
