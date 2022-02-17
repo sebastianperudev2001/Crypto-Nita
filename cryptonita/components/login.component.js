@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap"
-
+import ButtonLink from "./botonEnlace.component"
 const Login = () => {
     return <aside>
         <div className="card bg-secondary text-black bg-opacity-25">
@@ -26,7 +26,7 @@ const Login = () => {
                 </div>
                 <div className="row mt-2 mb-2">
                     <div className="col">
-                        <Button>Ingresar</Button>
+                        <ButtonLink path="/iniciadoSesion" nombre="Ingresar" color="btn btn-primary" />
                     </div>
                 </div>
             </div>
