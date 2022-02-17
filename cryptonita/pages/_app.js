@@ -1,6 +1,6 @@
-import '../styles/globals.css';
+//import '../styles/globals.css';
 import Head from 'next/head';
-import styles from '../styles/inicio.css';
+import '../styles/inicio.css';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
 
       <Component {...pageProps} />
     </>
-  );
+      
 }
 
 export default MyApp;
