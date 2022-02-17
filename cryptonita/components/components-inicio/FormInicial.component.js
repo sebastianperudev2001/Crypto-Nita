@@ -64,12 +64,14 @@ const FormInicial = (props) => {
               Mantenme loggeado
             </label>
           </div>
-          <input
-            type="submit"
+          <button
+            type="button"
             value="Iniciar Sesión"
             className="btn btn-primary"
             onClick={botonLoginOnClick}
-          />
+          >
+            Iniciar Sesión
+          </button>
 
           <Link href="/registroCliente">
             <a className="me-4 btn btn-primary btn-success">Abrir Cuenta</a>
