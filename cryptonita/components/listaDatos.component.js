@@ -83,7 +83,6 @@ const Listado = (props) => {
         </div>
     }
 
-=======
         </div>
         <div className="col"/>
     </div>
