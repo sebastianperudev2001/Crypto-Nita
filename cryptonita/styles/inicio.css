@@ -52,3 +52,19 @@
 .botonesIntro {
   font-size: 50px;
 }
+
+#Card{
+  background-color: #4A4E69;
+}
+#Btn-enviar{
+  background-color: #C9ADA7;
+}
+#Btn-Confirmar{
+  background-color: #C9ADA7;
+}
+#Fondo-textos{
+  background-color: #F2E9E4;
+}
+#Titulos{
+  color : white;
+}
