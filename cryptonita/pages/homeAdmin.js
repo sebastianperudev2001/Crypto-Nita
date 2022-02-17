@@ -1,4 +1,3 @@
-import CerrarSesion from '../components/components-usuario/CerrarSesion.component';
 import Navegador from '../components/NavBar.component';
 
 const HomeAdmin = () => {
@@ -6,7 +5,6 @@ const HomeAdmin = () => {
   return (
     <div className="container">
       <Navegador lisClass={clasesNav}></Navegador>
-      <CerrarSesion />
 
       <div className="row mt-5">
         <h1 className="text-center">Bienvenido Administrador</h1>

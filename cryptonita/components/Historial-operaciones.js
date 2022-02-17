@@ -1,7 +1,12 @@
+import NavBarUsuario from './NavBarUsuario.component';
+
 const HisotrialOperaciones = (props) => {
+  const lisClases = ['nav-link', 'nav-link', 'nav-link active'];
+
   return (
     <main className="col-md-8">
       <h3 className="mt-4">Historial de Operaciones</h3>
+      <NavBarUsuario lisClass={lisClases} />
       <div className="table-responsive">
         <table className="table mt-4 table-dark">
           <thead>

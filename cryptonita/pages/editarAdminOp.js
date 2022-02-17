@@ -33,16 +33,7 @@ export default function CompraBTC() {
     <div className="container">
       <Navegador lisClass={clasesNav}></Navegador>
       <h1>Editar operaciones</h1>
-      <div className="d-grid justify-content-md-end">
-        <p
-          className="text-end btn btn-link"
-          onClick={() => {
-            location.href = '/';
-          }}
-        >
-          <u>Salir</u>
-        </p>
-      </div>
+
       <main>
         <Listado
           modo={'admin'}

@@ -1,7 +1,7 @@
 import { navegar } from '../dao/metodos';
 import CerrarSesion from './components-usuario/CerrarSesion.component';
 
-const Navegador = (props) => {
+const NavBarUsuario = (props) => {
   const butOnClick = (event) => {
     const link = event.target.id;
     navegar(link);
@@ -11,7 +11,7 @@ const Navegador = (props) => {
       <ul className="nav nav-tabs nav-fill">
         <li className="nav-item">
           <button
-            id="/homeAdmin"
+            id="/iniciadoSesion"
             type="button"
             className={props.lisClass[0]}
             onClick={butOnClick}
@@ -21,34 +21,25 @@ const Navegador = (props) => {
         </li>
         <li className="nav-item">
           <button
-            id="/inicioClientes"
+            id="/ComprarVenderBTC"
             type="button"
             className={props.lisClass[1]}
             onClick={butOnClick}
           >
-            Clientes
+            Comprar/Vender
           </button>
         </li>
         <li className="nav-item">
           <button
-            id="/cambio_tipo"
+            id="/PruebaTabla"
             type="button"
             className={props.lisClass[2]}
             onClick={butOnClick}
           >
-            Tipo de cambio
+            Ver historial
           </button>
         </li>
-        <li className="nav-item">
-          <button
-            id="/editarAdminOp"
-            type="button"
-            className={props.lisClass[3]}
-            onClick={butOnClick}
-          >
-            Operaciones
-          </button>
-        </li>
+
         <li className="nav-item">
           <CerrarSesion />
         </li>
@@ -56,4 +47,4 @@ const Navegador = (props) => {
     </div>
   );
 };
-export default Navegador;
+export default NavBarUsuario;
