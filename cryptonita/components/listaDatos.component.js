@@ -1,7 +1,5 @@
 import ButtonLink from "./botonEnlace.component"
 
-
-
 const Listado = (props) => {
     if (props.modo == "admin") {
         return <div className="row container mt-4">
@@ -52,6 +50,13 @@ const Listado = (props) => {
                 <table className="table">
                     <thead>
                         <tr>
+const Listado = (props) => {
+    return <div className="row container mt-4">
+        <div className="col"/>
+        <div className="col-8 table-responsive">
+            <table className="table">
+                    <thead>
+                        <tr className="table-dark">
                             <th>Id</th>
                             <th>Nombre</th>
                             <th>Correo</th>
@@ -78,5 +83,9 @@ const Listado = (props) => {
         </div>
     }
 
+=======
+        </div>
+        <div className="col"/>
+    </div>
 }
 export default Listado
