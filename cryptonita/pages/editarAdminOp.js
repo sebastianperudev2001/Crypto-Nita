@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Listado from "../components/listaDatos.component"
 import ModalLista from "../components/modalLista.component"
+import Navegador from "../components/NavBar.component"
 
 export default function CompraBTC() {
     const [ListadoOperaciones,setListadoOperaciones] = useState([])
@@ -28,6 +29,7 @@ export default function CompraBTC() {
 
     return <div className="mt-4">
         <header>
+            <Navegador></Navegador>
             <h1>Editar operaciones</h1>
             <div className="d-grid justify-content-md-end">
                 <p className="text-end btn btn-link" onClick={() => {

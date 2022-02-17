@@ -3,6 +3,15 @@ const CompraVenta = (props) => {
 
     }
 
+    const solicitarOC = () =>{
+        if (props.tipo == "compra"){
+            location.href="/Historia29"
+            return
+        }
+        location.href="/Historia28"
+
+    }
+
     const cancelarOC = () =>{
         window.history.back()
     }
@@ -32,7 +41,7 @@ const CompraVenta = (props) => {
                 <p className="text-center">Cambio: {" "}{props.btcpen}</p>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <button class="btn btn-primary me-md-2" type="button">Solicitar</button>
+                <button class="btn btn-primary me-md-2" type="button" onClick={solicitarOC}>Solicitar</button>
                 <button class="btn btn-danger" type="button" onClick={cancelarOC}>Cancelar</button>
             </div>
         </div>
@@ -63,7 +72,7 @@ const CompraVenta = (props) => {
                 <p className="text-center">Cambio: {" "}{props.penbtc}</p>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <button class="btn btn-primary me-md-2" type="button">Solicitar</button>
+                <button class="btn btn-primary me-md-2" type="button" onClick={solicitarOC}>Solicitar</button>
                 <button class="btn btn-danger" type="button" onClick={cancelarOC}>Cancelar</button>
             </div>
         </div>

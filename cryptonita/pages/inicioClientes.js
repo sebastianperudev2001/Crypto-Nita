@@ -13,7 +13,7 @@ const InicioClientes=()=>{
                 <input type="input" placeholder="buscar" className="form-control" />
             </div>
         </div>
-        <Listado clientes={listaClientes}></Listado>
+        <Listado clientes={listaClientes} modo={"cliente"}></Listado>
         
     </div>
 }
