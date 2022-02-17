@@ -46,7 +46,7 @@ export default function Home() {
         <div id="linea"></div>
         <section id="segundaCara">
           <div className="tituloGrupo">
-            <h2 id="titulo">CrytoHackers Group</h2>
+            <h2 id="titulo">CryptoHackers Group</h2>
           </div>
 
           <div
@@ -55,7 +55,9 @@ export default function Home() {
             aria-label="Basic example"
             id="botones"
           >
-            <button type="button" className="btn btn-primary botonesIntro">
+            <button type="button" className="btn btn-primary botonesIntro" onClick={()=>{
+              location.href="/Login_cliente"
+            }}>
               Iniciar Sesión
             </button>
 
