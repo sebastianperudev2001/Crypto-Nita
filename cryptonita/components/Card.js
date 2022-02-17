@@ -19,20 +19,20 @@ const Card = (props) => {
     }
 
     if (props.modo == "H28") {
-        return <aside >
-            <div className="card mt-4">
+        return <aside>
+            <div id = "Card" className="card mt-4">
                 <div className="card-body">
-                    <h3 className="card-title text-center">Venta de Bitcoins</h3>
-                    <h4 className="text-center">Paso 1 de 3</h4>
-                    <h5 className="card-subtitle mb-4 mt-4 text-muted">Ingrese su numero de cuenta: </h5>
-                    <input type="text" className="form-control mt-4" defaultValue={ NumeroCuenta } onChange={ NumeroCuentaOnChange }/>
-                    <h5 className="card-subtitle mb-2 text-muted mt-4">Número de operación: </h5>
-                    <div className="card">
+                    <h3 id="Titulos" className="card-title text-center">Venta de Bitcoins</h3>
+                    <h4 id="Titulos" className="text-center">Paso 1 de 3</h4>
+                    <h5 id="Titulos" className="card-subtitle mb-4 mt-4">Ingrese su numero de cuenta: </h5>
+                    <input id="Fondo-textos" type="text" className="form-control mt-4" defaultValue={ NumeroCuenta } onChange={ NumeroCuentaOnChange }/>
+                    <h5 id="Titulos" className="card-subtitle mb-2  mt-4">Número de operación: </h5>
+                    <div id="Fondo-textos" className="card">
                         <div className="card-body">
-                            <p></p>
+                            <p ></p>
                         </div>
                     </div>
-                    <button className="mt-4 btn btn-success btn-outline-light" onClick={
+                    <button id="Btn-Confirmar" className="mt-4 btn btn-outline-light" onClick={
                         (() => {
                             location.href = "/Historia30"
                         })
@@ -42,19 +42,19 @@ const Card = (props) => {
         </aside>
     } else if (props.modo == "H29") {
         return <aside >
-            <div className="card mt-4">
+            <div id = "Card" className="card mt-4">
                 <div className="card-body">
-                    <h3 className="card-title text-center">Compra de Bitcoins</h3>
-                    <h4 className="text-center">Paso 1 de 3</h4>
-                    <h5 className="card-subtitle mb-4 mt-4 text-muted">Ingrese su dirección de billetera: </h5>
-                    <input type="text" className="form-control mt-4" defaultValue={ NumeroBilletera } onChange={ NumeroBilleteraOnChange }/>
-                    <h5 className="card-subtitle mb-2 text-muted mt-4">Número de operación: </h5>
-                    <div className="card">
+                    <h3 id="Titulos" className="card-title text-center">Compra de Bitcoins</h3>
+                    <h4 id="Titulos" className="text-center">Paso 1 de 3</h4>
+                    <h5 id="Titulos" className="card-subtitle mb-4 mt-4">Ingrese su dirección de billetera: </h5>
+                    <input id="Fondo-textos" type="text" className="form-control mt-4" defaultValue={ NumeroBilletera } onChange={ NumeroBilleteraOnChange }/>
+                    <h5 id="Titulos" className="card-subtitle mb-2 mt-4">Número de operación: </h5>
+                    <div id="Fondo-textos" className="card">
                         <div className="card-body">
                             <p></p>
                         </div>
                     </div>
-                    <button className="mt-4 btn btn-success btn-outline-light" onClick={
+                    <button id="Btn-Confirmar" className="mt-4 btn btn-outline-light" onClick={
                         (() => {
                             location.href = "/Historia31"
                         })
@@ -64,20 +64,20 @@ const Card = (props) => {
         </aside>
     } else if (props.modo == "H30") {
         return <aside >
-            <div class="card mt-4">
+            <div id = "Card" class="card mt-4">
                 <div className="card-body">
-                    <h3 className="card-title text-center">Venta de Bitcoins</h3>
-                    <h4 className="text-center">Paso 2 de 3</h4>
-                    <h5 className="card-subtitle mb-4 mt-4 text-muted">Dirección de billetera de la página: </h5>
-                    <div className="card">
+                    <h3 id="Titulos" className="card-title text-center">Venta de Bitcoins</h3>
+                    <h4 id="Titulos" className="text-center">Paso 2 de 3</h4>
+                    <h5 id="Titulos" className="card-subtitle mb-4 mt-4">Dirección de billetera de la página: </h5>
+                    <div id="Fondo-textos" className="card">
                         <div className="card-body">
                             <p></p>
                         </div>
                     </div>
-                    <h5 className="card-subtitle mb-2 text-muted mt-4">Ingrese el número de transacción: </h5>
-                    <input type="text" className="form-control mt-4"  defaultValue={ NumeroTransaccion } onChange={ NumeroTransaccionOnChange }/>
+                    <h5 id="Titulos" className="card-subtitle mb-2 mt-4">Ingrese el número de transacción: </h5>
+                    <input id="Fondo-textos" type="text" className="form-control mt-4"  defaultValue={ NumeroTransaccion } onChange={ NumeroTransaccionOnChange }/>
                     
-                    <button className="mt-4 btn btn-success btn-outline-light" onClick={
+                    <button id="Btn-enviar" className="mt-4 btn btn-outline-light" onClick={
                         (() => {
                             location.href = "/Historia35"
                         })
@@ -87,20 +87,20 @@ const Card = (props) => {
         </aside>
     } else if (props.modo == "H31") {
         return <aside >
-            <div className="card mt-4">
+            <div id = "Card" className="card mt-4">
                 <div className="card-body">
-                    <h3 className="card-title text-center">Venta de Bitcoins</h3>
-                    <h4 className="text-center">Paso 2 de 3</h4>
-                    <h5 className="card-subtitle mb-4 mt-4 text-muted">Número de cuenta bancaria de la página: </h5>
-                    <div className="card">
+                    <h3 id="Titulos" className="card-title text-center">Venta de Bitcoins</h3>
+                    <h4 id="Titulos" className="text-center">Paso 2 de 3</h4>
+                    <h5 id="Titulos" className="card-subtitle mb-4 mt-4">Número de cuenta bancaria de la página: </h5>
+                    <div id="Fondo-textos" className="card">
                         <div className="card-body">
                             <p></p>
                         </div>
                     </div>
-                    <h5 className="card-subtitle mb-2 text-muted mt-4">Ingrese el número de transacción: </h5>
-                    <input type="text" className="form-control mt-4"  defaultValue={ NumeroTransaccion } onChange={ NumeroTransaccionOnChange }/>
+                    <h5 id="Titulos" className="card-subtitle mb-2 mt-4">Ingrese el número de transacción: </h5>
+                    <input id="Fondo-textos" type="text" className="form-control mt-4"  defaultValue={ NumeroTransaccion } onChange={ NumeroTransaccionOnChange }/>
 
-                    <button className="mt-4 btn btn-success btn-outline-light"
+                    <button id="Btn-enviar" className="mt-4 btn btn-outline-light"
                     onClick={
                         (() => {
                             location.href = "/Historia35"
@@ -111,13 +111,13 @@ const Card = (props) => {
         </aside>
     }else if (props.modo == "H35") {
         return <aside >
-            <div className="card mt-4">
+            <div id = "Card" className="card mt-4">
                 <div className="card-body">
-                    <h3 className="card-title text-center">Venta de Bitcoins</h3>
-                    <h4 className="text-center">Paso 3 de 3</h4>
-                    <div className="alert alert-success mt-4">Operación Realizada con éxito</div>
-                    <h5 className="card-subtitle mb-4 mt-4 text-muted">Número operación: </h5>
-                    <div className="card">
+                    <h3 id="Titulos" className="card-title text-center">Venta de Bitcoins</h3>
+                    <h4 id="Titulos" className="text-center">Paso 3 de 3</h4>
+                    <div id="Fondo-textos" className="alert mt-4">Operación Realizada con éxito</div>
+                    <h5 id="Titulos" className="card-subtitle mb-4 mt-4">Número operación: </h5>
+                    <div id="Fondo-textos" className="card">
                         <div className="card-body">
                             <p></p>
                         </div>
