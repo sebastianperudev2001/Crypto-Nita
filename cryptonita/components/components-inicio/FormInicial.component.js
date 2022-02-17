@@ -1,7 +1,22 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import Footer from '../Footer.component';
 
-const FormInicial = () => {
+const FormInicial = (props) => {
+  const [txtUsername, setTxtUsername] = useState('');
+  const [txtPassword, setTxtPassword] = useState('');
+  const txtUsernameOnChange = (event) => {
+    const txtUsernameIngresado = event.target.value;
+    setTxtUsername(txtUsernameIngresado);
+  };
+
+  const txtPasswordOnChange = (event) => {
+    setTxtPassword(event.target.value);
+  };
+
+  const botonLoginOnClick = () => {
+    props.onLogin(txtUsername, txtPassword);
+  };
   return (
     <>
       <section id="segundaCara">
@@ -11,9 +26,9 @@ const FormInicial = () => {
           </h1>
         </div>
 
-        <form method="POST" action="/iniciadoSesion">
+        <form>
           <div className="form-group">
-            <label for="exampleInputEmail1">Correo electrónico</label>
+            <label htmlFor="exampleInputEmail1">Correo electrónico</label>
             <input
               type="email"
               className="form-control w-75 "
@@ -21,6 +36,7 @@ const FormInicial = () => {
               aria-describedby="emailHelp"
               placeholder="Ingrese su correo"
               required
+              onChange={txtUsernameOnChange}
             />
             <small id="emailHelp" className="form-text text-muted">
               Nunca revelaremos su información. Toda la información procesada es
@@ -28,13 +44,14 @@ const FormInicial = () => {
             </small>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
+            <label htmlFor="exampleInputPassword1">Contraseña</label>
             <input
               type="password"
               className="form-control w-75"
               id="exampleInputPassword1"
               placeholder="Ingrese su contraseña"
-              requiered
+              required
+              onChange={txtPasswordOnChange}
             />
           </div>
           <div className="form-check">
@@ -51,6 +68,7 @@ const FormInicial = () => {
             type="submit"
             value="Iniciar Sesión"
             className="btn btn-primary"
+            onClick={botonLoginOnClick}
           />
 
           <Link href="/registroCliente">
