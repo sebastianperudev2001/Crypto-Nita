@@ -8,7 +8,7 @@ const RegistroPaso02 = () => {
           <h1>Registro de Cuenta</h1>
         </div>
         <div class="card-body">
-          <form>
+          <form method="POST" action="/espera">
             <div className="form-group">
               <label for="correoInput">Correo Electrónico</label>
               <input
@@ -16,6 +16,7 @@ const RegistroPaso02 = () => {
                 className="form-control"
                 id="correoInput"
                 placeholder="Ingrese su correo electrónico"
+                required
               />
             </div>
             <div className="form-group">
@@ -25,6 +26,7 @@ const RegistroPaso02 = () => {
                 className="form-control"
                 id="passwordInput"
                 placeholder="Ingrese su contraseña"
+                required
               />
             </div>
 
@@ -35,6 +37,7 @@ const RegistroPaso02 = () => {
                 className="form-control"
                 id="passwordInput"
                 placeholder="Ingrese su contraseña de nuevo"
+                required
               />
             </div>
 
@@ -45,16 +48,12 @@ const RegistroPaso02 = () => {
                 className="form-control"
                 id="phoneInput"
                 placeholder="Ingrese su número telefónico"
+                required
               />
             </div>
-            <Link href="/espera">
-              <button
-                type="button"
-                className="btn btn-success btn-lg mt-4 mb-4"
-              >
-                Finalizar
-              </button>
-            </Link>
+            <button type="submit" className="btn btn-success btn-lg mt-4 mb-4">
+              Finalizar
+            </button>
 
             <Link href="/registroCliente">
               <button type="button" className="btn btn-danger btn-lg mt-4 mb-4">

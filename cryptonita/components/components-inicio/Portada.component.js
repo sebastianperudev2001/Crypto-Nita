@@ -12,7 +12,7 @@ const Portada = () => {
             />
           </figure>
         </div>
-        <div className="w-75 p-3 mx-auto">
+        <div className="w-50 p-3 mx-auto">
           <div className="card">
             <div className="card-body">
               <Typewriter

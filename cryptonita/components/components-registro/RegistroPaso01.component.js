@@ -8,9 +8,9 @@ const RegistroPaso01 = () => {
           <h1>Registro de Cuenta</h1>
         </div>
         <div className="card-body">
-          <form>
+          <form method="POST" action="/registroCliente02">
             <div className="form-group">
-              <label for="nombreInput">Nombre</label>
+              <label htmlFor="nombreInput">Nombre</label>
               <input
                 type="text"
                 className="form-control"
@@ -20,7 +20,7 @@ const RegistroPaso01 = () => {
               />
             </div>
             <div className="form-group">
-              <label for="apellidosInput">Apellidos</label>
+              <label htmlFor="apellidosInput">Apellidos</label>
               <input
                 type="text"
                 className="form-control"
@@ -31,7 +31,7 @@ const RegistroPaso01 = () => {
             </div>
 
             <div className="form-group">
-              <label for="apellidosInput">Número de DNI</label>
+              <label htmlFor="apellidosInput">Número de DNI</label>
               <input
                 type="text"
                 className="form-control"
@@ -40,15 +40,9 @@ const RegistroPaso01 = () => {
                 required
               />
             </div>
-            <Link href="/registroCliente02">
-              <button
-                type="submit"
-                className="btn btn-success btn-lg mt-4 mb-4"
-              >
-                Siguiente
-              </button>
-            </Link>
-
+            <button type="submit" className="btn btn-success btn-lg mt-4 mb-4">
+              Siguiente
+            </button>
             <Link href="/">
               <button type="button" className="btn btn-danger btn-lg mt-4 mb-4">
                 Regresar

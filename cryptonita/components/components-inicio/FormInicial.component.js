@@ -11,7 +11,7 @@ const FormInicial = () => {
           </h1>
         </div>
 
-        <form>
+        <form method="POST" action="/iniciadoSesion">
           <div className="form-group">
             <label for="exampleInputEmail1">Correo electrónico</label>
             <input
@@ -20,6 +20,7 @@ const FormInicial = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Ingrese su correo"
+              required
             />
             <small id="emailHelp" className="form-text text-muted">
               Nunca revelaremos su información. Toda la información procesada es
@@ -33,6 +34,7 @@ const FormInicial = () => {
               className="form-control w-75"
               id="exampleInputPassword1"
               placeholder="Ingrese su contraseña"
+              requiered
             />
           </div>
           <div className="form-check">
@@ -45,11 +47,11 @@ const FormInicial = () => {
               Mantenme loggeado
             </label>
           </div>
-          <Link href="/iniciadoSesion">
-            <button type="submit" className="btn btn-primary">
-              Iniciar Sesión
-            </button>
-          </Link>
+          <input
+            type="submit"
+            value="Iniciar Sesión"
+            className="btn btn-primary"
+          />
 
           <Link href="/registroCliente">
             <a className="me-4 btn btn-primary btn-success">Abrir Cuenta</a>
