@@ -17,11 +17,11 @@ const Login = () => {
                 </div>
                 <h5>Iniciar Sesión</h5>
                 <div className="input-group-sm mb-2">
-                    <label for="" className="form-label">Correo</label>
+                    <label htmlFor="" className="form-label">Correo</label>
                     <input type="email" placeholder="Email" className="form-control" />
                 </div>
                 <div className="input-group-sm mb-2">
-                    <label for="" className="form-label">Contraseña</label>
+                    <label htmlFor="" className="form-label">Contraseña</label>
                     <input type="password" placeholder="password" className="form-control" />
                 </div>
                 <div className="row mt-2 mb-2">

@@ -8,7 +8,7 @@ const ModalLista = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-            <select class="form-select" aria-label="Default select example">
+            <select className="form-select" aria-label="Default select example">
                 <option selected>Elije una opcion</option>
                 <option value="1">Pendiente</option>
                 <option value="2">Finalizado</option>

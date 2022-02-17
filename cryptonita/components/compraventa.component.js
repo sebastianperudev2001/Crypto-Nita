@@ -1,5 +1,7 @@
 const CompraVenta = (props) => {
-  const RecibirOC = (event) => {};
+  const cambioOC = () => {
+    console.log("WIP")
+  };
 
   const solicitarOC = () => {
     if (props.tipo == 'compra') {
@@ -20,28 +22,30 @@ const CompraVenta = (props) => {
           <div className="mt-5-md">
             <div className="row">
               <div className="col-md-5 ms-5-md">
-                <label htmlFor="recibir" class="form-label">
+                <label htmlFor="recibir" className="form-label">
                   Recibes (BTC):
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="recibir"
                   placeholder="0"
                 />
               </div>
               <div className="col-md">
                 <div className="d-flex justify-content-center pt-4">
-                  aqui va png xd
+                <button type="button" className="btn btn-light" onClick={cambioOC}>
+                  <img src="https://cdn.pixabay.com/photo/2012/04/10/23/46/arrows-27112_960_720.png" className="imgflechas rounded mx-auto d-block"></img>
+                </button>
                 </div>
               </div>
               <div className="col-md-5 me-5-md">
-                <label htmlFor="recibir" class="form-label">
+                <label htmlFor="recibir" className="form-label">
                   Das (PEN):
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="recibir"
                   placeholder="0"
                 />
@@ -52,15 +56,15 @@ const CompraVenta = (props) => {
         <div className="mt-4">
           <p className="text-center">Cambio: {props.btcpen}</p>
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-center">
           <button
-            class="btn btn-primary me-md-2"
+            className="btn btn-primary me-md-2"
             type="button"
             onClick={solicitarOC}
           >
             Solicitar
           </button>
-          <button class="btn btn-danger" type="button" onClick={cancelarOC}>
+          <button className="btn btn-danger" type="button" onClick={cancelarOC}>
             Cancelar
           </button>
         </div>
@@ -75,28 +79,30 @@ const CompraVenta = (props) => {
           <div className="mt-5-md">
             <div className="row">
               <div className="col-md-5 ms-5-md">
-                <label htmlFor="dar" class="form-label">
+                <label htmlFor="dar" className="form-label">
                   Das (BTC):
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="dar"
                   placeholder="0"
                 />
               </div>
               <div className="col-md">
                 <div className="d-flex justify-content-center pt-4">
-                  aqui va png xd
+                <button type="button" className="btn btn-light" onClick={cambioOC}>
+                  <img src="https://cdn.pixabay.com/photo/2012/04/10/23/46/arrows-27112_960_720.png" className="imgflechas rounded mx-auto d-block"></img>
+                </button>
                 </div>
               </div>
               <div className="col-md-5 me-5-md">
-                <label htmlFor="recibir" class="form-label">
+                <label htmlFor="recibir" className="form-label">
                   Recibes (PEN):
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="recibir"
                   placeholder="0"
                 />
@@ -107,15 +113,15 @@ const CompraVenta = (props) => {
         <div className="mt-4">
           <p className="text-center">Cambio: {props.penbtc}</p>
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-center">
           <button
-            class="btn btn-primary me-md-2"
+            className="btn btn-primary me-md-2"
             type="button"
             onClick={solicitarOC}
           >
             Solicitar
           </button>
-          <button class="btn btn-danger" type="button" onClick={cancelarOC}>
+          <button className="btn btn-danger" type="button" onClick={cancelarOC}>
             Cancelar
           </button>
         </div>

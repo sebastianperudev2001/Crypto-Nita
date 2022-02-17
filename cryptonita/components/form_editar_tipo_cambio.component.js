@@ -16,19 +16,19 @@ const FormTipoCambio = (props) => {
     }
 
     return <div className="card col mt-3">
-        <div class="card-body">
+        <div className="card-body">
             <h5>Cambio actual:</h5>
             <p>BTC-PEN: {props.btcpen}</p>
             <p>PEN-BTC: {props.penbtc}</p>
             <h5>Nuevos cambios:</h5>
             <form>
                 <div className="mt-2">
-                    <label className="form-label" for="btc-pen">BTC-PEN:</label>
+                    <label className="form-label" htmlFor="btc-pen">BTC-PEN:</label>
                     <input className="form-control" type="number" id="btc-pen" defaultValue={btc_penLocal}
                             onChange={BTC_PENoc}></input>
                 </div>
                 <div className="mt-2">
-                    <label className="form-label" for="pen-btc">PEN-BTC:</label>
+                    <label className="form-label" htmlFor="pen-btc">PEN-BTC:</label>
                     <input className="form-control" type="number" id="pen-btc" defaultValue={pen_btcLocal}
                             onChange={PEN_BTCoc}></input>
                 </div>

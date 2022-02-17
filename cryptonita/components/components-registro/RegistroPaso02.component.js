@@ -10,7 +10,7 @@ const RegistroPaso02 = () => {
         <div class="card-body">
           <form method="POST" action="/espera">
             <div className="form-group">
-              <label for="correoInput">Correo Electrónico</label>
+              <label htmlFor="correoInput" htm>Correo Electrónico</label>
               <input
                 type="email"
                 className="form-control"
@@ -20,7 +20,7 @@ const RegistroPaso02 = () => {
               />
             </div>
             <div className="form-group">
-              <label for="passwordInput">Contraseña</label>
+              <label htmlFor="passwordInput">Contraseña</label>
               <input
                 type="password"
                 className="form-control"
@@ -31,7 +31,7 @@ const RegistroPaso02 = () => {
             </div>
 
             <div className="form-group">
-              <label for="passwordInput">Repetir Contraseña</label>
+              <label htmlFor="passwordInput">Repetir Contraseña</label>
               <input
                 type="password"
                 className="form-control"
@@ -42,7 +42,7 @@ const RegistroPaso02 = () => {
             </div>
 
             <div className="form-group">
-              <label for="phoneInput">Número telefónico</label>
+              <label htmlFor="phoneInput">Número telefónico</label>
               <input
                 type="text"
                 className="form-control"

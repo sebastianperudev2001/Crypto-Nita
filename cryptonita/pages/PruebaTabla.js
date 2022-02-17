@@ -16,7 +16,7 @@ export default function TablaOp() {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <HisotrialOperaciones Operaciones={listaOperacioes} />
       <button className="btn btn-danger" onClick={regresar}>
         {' '}
