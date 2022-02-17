@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+//import '../styles/globals.css';
 import Head from 'next/head';
 import styles from '../styles/inicio.css';
 
@@ -18,8 +18,9 @@ function MyApp({ Component, pageProps }) {
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"
       ></script>
-
-      <Component {...pageProps} />
+      <div className='container'>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

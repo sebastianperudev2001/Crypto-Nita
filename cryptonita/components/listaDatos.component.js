@@ -3,7 +3,7 @@ import ButtonLink from "./botonEnlace.component"
 const Listado = (props) => {
     return <div className="row container mt-4">
         <div className="col"/>
-        <main className="col-8">
+        <div className="col-8 table-responsive">
             <table className="table">
                     <thead>
                         <tr className="table-dark">
@@ -28,7 +28,7 @@ const Listado = (props) => {
                         }
                     </tbody>
                 </table>
-        </main>
+        </div>
         <div className="col"/>
     </div>
 }

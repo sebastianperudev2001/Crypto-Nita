@@ -6,16 +6,14 @@ const InicioClientes=()=>{
         {id: 10, nombre: "Ricardo", correo:"@gmail.com", telefono: "999 999 999" }
         ,{id: 11, nombre: "Sebastián", correo:"@gmail.com", telefono: "999 999 999" }
     ]
-    return <div className="container">
+    return <div className="page-content">
         <Navegador></Navegador>
         <div className="row mt-4">
-            <div className="col-2">
+            <div className="col-4">
                 <input type="input" placeholder="buscar" className="form-control" />
             </div>
         </div>
         <Listado clientes={listaClientes}></Listado>
-        
-        
         
     </div>
 }

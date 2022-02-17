@@ -1,8 +1,7 @@
 const EdClientes = () => {
     return <div className="row mt-4">
-        <div className="col" />
-        <div className="col-8">
-            <div className="card bg-secondary text-black bg-opacity-25">
+        <div className="card bg-secondary text-black bg-opacity-25">
+            <div className="card-body">
                 <div className="row me-2 ms-2 mt-4 mb-4">
                     <div className="col">
                         <div className="input-group-sm mb-2">
@@ -33,9 +32,9 @@ const EdClientes = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-        <div className="col" />
     </div>
 }
 export default EdClientes
