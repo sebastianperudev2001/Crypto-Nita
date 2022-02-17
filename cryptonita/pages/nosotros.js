@@ -9,9 +9,11 @@ NFTs recuperados de: https://thedogepoundnft.com/doge#
 export default function nosotros() {
   return (
     <>
-      <Nosotros />
-      <BotonMenuPrincipal />
-      <Footer />
+      <div id="paginaNosotros">
+        <Nosotros />
+        <BotonMenuPrincipal />
+        <Footer />
+      </div>
     </>
   );
 }

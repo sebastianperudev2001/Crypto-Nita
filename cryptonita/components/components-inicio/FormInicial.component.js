@@ -6,7 +6,9 @@ const FormInicial = () => {
     <>
       <section id="segundaCara">
         <div className="tituloGrupo">
-          <h2 id="titulo">CrytoHackers Group</h2>
+          <h1 className="text-center" id="titulo">
+            CrytoHackers Group
+          </h1>
         </div>
 
         <form>
@@ -14,7 +16,7 @@ const FormInicial = () => {
             <label for="exampleInputEmail1">Correo electrónico</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control w-75 "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Ingrese su correo"
@@ -28,7 +30,7 @@ const FormInicial = () => {
             <label for="exampleInputPassword1">Contraseña</label>
             <input
               type="password"
-              className="form-control"
+              className="form-control w-75"
               id="exampleInputPassword1"
               placeholder="Ingrese su contraseña"
             />
@@ -43,17 +45,18 @@ const FormInicial = () => {
               Mantenme loggeado
             </label>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Iniciar Sesión
-          </button>
+          <Link href="/iniciadoSesion">
+            <button type="submit" className="btn btn-primary">
+              Iniciar Sesión
+            </button>
+          </Link>
 
           <Link href="/registroCliente">
             <a className="me-4 btn btn-primary btn-success">Abrir Cuenta</a>
           </Link>
         </form>
-
-        <Footer />
       </section>
+      <Footer />
     </>
   );
 };

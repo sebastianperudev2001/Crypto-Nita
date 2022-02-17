@@ -1,10 +1,13 @@
+import IniciarSesion from '../components/components-usuario/IniciarSesion.component';
 import Footer from '../components/Footer.component';
-import IniciarSesion from '../components/IniciarSesion.component';
 
 export default function iniciadoSesion() {
   return (
     <>
-      <IniciarSesion />
+      <div id="paginaIniciadoSesion">
+        <IniciarSesion />
+      </div>
+
       <Footer />
     </>
   );

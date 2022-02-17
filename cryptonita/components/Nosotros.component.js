@@ -1,61 +1,59 @@
 const Nosotros = () => {
   return (
     <>
-      <h1>Nosotros</h1>
-      <p>El equipo detrás de este proyecto</p>
-      <div className="persona">
-        <div className="columnaImagen">
-          <img src="/dodge-fino.png" />
-        </div>
-        <div>
-          <p>Sebastián Chávarry</p>
-          <p>Sárcastico, pero buena gente</p>
-          <a href="https://www.linkedin.com/in/sebasti%C3%A1n-ch%C3%A1varry-gutierrez/">
-            LinkedIn
-          </a>{' '}
-          <a href="https://github.com/sebastianperudev2001">GitHub</a>
-        </div>
-      </div>
+      <h1 className="text-center">Nosotros</h1>
+      <p className="fst-italic text-center">
+        El equipo detrás de este proyecto
+      </p>
 
-      <div className="persona">
-        <div className="columnaImagen">
-          <img src="/dodge-loco.png" />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <figure className="figure">
+              <img
+                src="/dodge-fino.png"
+                className="figure-img img-fluid rounded"
+                alt="Sebas"
+              />
+              <figcaption className="figure-caption">
+                Sebastián Chávarry
+              </figcaption>
+            </figure>
+          </div>
+          <div className="col">
+            <figure className="figure">
+              <img
+                src="/dodge-loco.png"
+                className="figure-img img-fluid rounded"
+                alt="Sebas"
+              />
+              <figcaption className="figure-caption">Ricardo Silva</figcaption>
+            </figure>
+          </div>
         </div>
-        <div>
-          <p>Sebastián Chávarry</p>
-          <p>Sárcastico, pero buena gente</p>
-          <a href="https://www.linkedin.com/in/sebasti%C3%A1n-ch%C3%A1varry-gutierrez/">
-            LinkedIn
-          </a>{' '}
-          <a href="https://github.com/sebastianperudev2001">GitHub</a>
-        </div>
-      </div>
-
-      <div className="persona">
-        <div className="columnaImagen">
-          <img src="/dodge-pizza.png" />
-        </div>
-        <div>
-          <p>Sebastián Chávarry</p>
-          <p>Sárcastico, pero buena gente</p>
-          <a href="https://www.linkedin.com/in/sebasti%C3%A1n-ch%C3%A1varry-gutierrez/">
-            LinkedIn
-          </a>{' '}
-          <a href="https://github.com/sebastianperudev2001">GitHub</a>
-        </div>
-      </div>
-
-      <div className="persona">
-        <div className="columnaImagen">
-          <img src="/dodge-fiesta.png" />
-        </div>
-        <div>
-          <p>Sebastián Chávarry</p>
-          <p>Sárcastico, pero buena gente</p>
-          <a href="https://www.linkedin.com/in/sebasti%C3%A1n-ch%C3%A1varry-gutierrez/">
-            LinkedIn
-          </a>{' '}
-          <a href="https://github.com/sebastianperudev2001">GitHub</a>
+        <div className="row">
+          <div className="col">
+            <figure className="figure">
+              <img
+                src="/dodge-pizza.png"
+                className="figure-img img-fluid rounded"
+                alt="Sebas"
+              />
+              <figcaption className="figure-caption">
+                Matías Villanueva
+              </figcaption>
+            </figure>
+          </div>
+          <div className="col">
+            <figure className="figure">
+              <img
+                src="/dodge-fiesta.png"
+                className="figure-img img-fluid rounded"
+                alt="Sebas"
+              />
+              <figcaption className="figure-caption">Franco Marqués</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </>

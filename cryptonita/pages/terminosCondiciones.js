@@ -5,7 +5,9 @@ import TerminosCond from '../components/TerminosCond.component';
 export default function terminosCondiciones() {
   return (
     <>
-      <TerminosCond />
+      <div id="paginaTermCond">
+        <TerminosCond />
+      </div>
       <Footer />
     </>
   );

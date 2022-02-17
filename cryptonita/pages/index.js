@@ -13,12 +13,8 @@ https://www.npmjs.com/package/typewriter-effect
 export default function Home() {
   return (
     <>
-      <div className="page-content">
-        <Portada />
-
-        <div id="linea"></div>
-        <FormInicial />
-      </div>
+      <Portada />
+      <FormInicial />
     </>
   );
 }

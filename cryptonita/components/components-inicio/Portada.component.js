@@ -4,11 +4,16 @@ const Portada = () => {
   return (
     <>
       <section id="primeraCara">
-        <div className="row">
-          <img id="logo" src="/logoNegro.png" className="logo" />
+        <div>
+          <figure className="figure d-flex justify-content-center">
+            <img
+              src="/logoNegro.png"
+              className="figure-img img-fluid rounded"
+            />
+          </figure>
         </div>
-        <div className="row" id="cajita">
-          <div className="card mx-auto" id="intro">
+        <div className="w-75 p-3 mx-auto">
+          <div className="card">
             <div className="card-body">
               <Typewriter
                 options={{
@@ -27,6 +32,7 @@ const Portada = () => {
               <a
                 href="#segundaCara"
                 className=" mt-4 btn btn-primary d-flex justify-content-center"
+                id="abajo"
               >
                 <i className="bi bi-arrow-down"></i>
               </a>
