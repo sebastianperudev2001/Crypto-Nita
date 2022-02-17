@@ -15,7 +15,11 @@ const IniciarSesion = () => {
             }}>Comprar/Vender</button>
           </div>
           <div className="col">
-            <button className="w-100 btn btn-primary">Ver Historial</button>
+            <button className="w-100 btn btn-primary" onClick={
+                        (() => {
+                            location.href = "/PruebaTabla"
+                        })
+                    }>Ver Historial</button>
           </div>
         </div>
       </div>
