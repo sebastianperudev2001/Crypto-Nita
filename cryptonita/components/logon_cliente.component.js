@@ -12,7 +12,7 @@ const LoginCliente = () => {
         setPassUsuario(event.target.value)
     }
 
-    return <div className="card bg-light col mt-3">
+    return <div className="card bg-light mt-3">
         <div class="card-body">
             <h5>Iniciar sesión</h5>
             <form className="mt-3">
