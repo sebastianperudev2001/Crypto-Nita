@@ -30,7 +30,7 @@ const Listado = (props) => {
                                     <td>
                                         <div className="row">
                                             <div className="col-md">{op.estado}{""} </div>
-                                            <div className="col-md"><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo={props.modo}/></div>
+                                            <div className="col-md"><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo={props.modo} /></div>
                                         </div>
                                     </td>
                                 </tr>
@@ -50,13 +50,6 @@ const Listado = (props) => {
                 <table className="table">
                     <thead>
                         <tr>
-const Listado = (props) => {
-    return <div className="row container mt-4">
-        <div className="col"/>
-        <div className="col-8 table-responsive">
-            <table className="table">
-                    <thead>
-                        <tr className="table-dark">
                             <th>Id</th>
                             <th>Nombre</th>
                             <th>Correo</th>
@@ -82,10 +75,5 @@ const Listado = (props) => {
             <div className="col" />
         </div>
     }
-
-=======
-        </div>
-        <div className="col"/>
-    </div>
 }
 export default Listado

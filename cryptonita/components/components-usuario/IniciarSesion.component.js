@@ -10,7 +10,9 @@ const IniciarSesion = () => {
       <div className="container mt-5">
         <div className="row">
           <div className="col">
-            <button className="w-100 btn btn-primary">Comprar/Vender</button>
+            <button className="w-100 btn btn-primary" onClick={()=>{
+              location.href="/ComprarVenderBTC"
+            }}>Comprar/Vender</button>
           </div>
           <div className="col">
             <button className="w-100 btn btn-primary">Ver Historial</button>
