@@ -4,7 +4,7 @@ const Listado = (props) => {
     if (props.modo == "admin") {
         return <div className="row container mt-4">
             <div className="col-md" />
-            <main className="col-md-10">
+            <div className="col-md-10 table-responsive">
                 <table className="table">
                     <thead>
                         <tr>
@@ -38,7 +38,7 @@ const Listado = (props) => {
                         }
                     </tbody>
                 </table>
-            </main>
+            </div>
             <div className="col-md" />
         </div>
     }
@@ -46,7 +46,7 @@ const Listado = (props) => {
     if (props.modo == "cliente") {
         return <div className="row container mt-4">
             <div className="col" />
-            <main className="col-8">
+            <div className="col-8 table-responsive">
                 <table className="table">
                     <thead>
                         <tr>
@@ -65,13 +65,13 @@ const Listado = (props) => {
                                     <td>{cliente.nombre}</td>
                                     <td>{cliente.correo}</td>
                                     <td>{cliente.telefono}</td>
-                                    <td><ButtonLink path="/editarCliente" nombre="Editar" color="btn btn-warning" /></td>
+                                    <td><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo="cliente"  /></td>
                                 </tr>
                             })
                         }
                     </tbody>
                 </table>
-            </main>
+            </div>
             <div className="col" />
         </div>
     }

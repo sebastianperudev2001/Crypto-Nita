@@ -7,6 +7,8 @@ const ButtonLink=(props)=>{
     }
     if (props.modo=="admin"){
         return <button id="" className={props.color} onClick={props.editar} >{props.nombre}</button>
+    }else if(props.modo=="cliente"){
+        return <button id="" className={props.color} onClick={props.editar} >{props.nombre}</button>
     }
 
     return <button id="" className={props.color} onClick={butOnClick} >{props.nombre}</button>

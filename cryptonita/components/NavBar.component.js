@@ -1,6 +1,6 @@
 import { navegar } from "../dao/metodos"
 
-const Navegador=()=>{
+const Navegador=(props)=>{
     const butOnClick=(event)=>{
         const link=event.target.id
         navegar(link)
@@ -8,16 +8,16 @@ const Navegador=()=>{
     return <div className="navegador mt-2 mb-2">
         <ul className="nav nav-tabs nav-fill">
             <li className="nav-item">
-                <button id="/" type="button" className="nav-link" onClick={butOnClick} >Home</button>
+                <button id="/homeAdmin" type="button" className={props.lisClass[0]} onClick={butOnClick} >Home</button>
             </li>
             <li className="nav-item">
-                <button id="/inicioClientes" type="button" className="nav-link" onClick={butOnClick} >Clientes</button>
+                <button id="/inicioClientes" type="button" className={props.lisClass[1]} onClick={butOnClick} >Clientes</button>
             </li>
             <li className="nav-item">
-                <button id="/" type="button" className="nav-link" onClick={butOnClick} >Tipo de cambio</button>
+                <button id="/cambio_tipo" type="button" className={props.lisClass[2]} onClick={butOnClick} >Tipo de cambio</button>
             </li>
             <li className="nav-item">
-                <button id="/" type="button" className="nav-link" onClick={butOnClick} >Operaciones</button>
+                <button id="/editarAdminOp" type="button" className={props.lisClass[3]} onClick={butOnClick} >Operaciones</button>
             </li>
         </ul>
     </div>

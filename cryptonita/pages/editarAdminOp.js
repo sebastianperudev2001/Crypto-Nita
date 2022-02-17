@@ -28,11 +28,10 @@ export default function CompraBTC() {
       },
     ]);
   }, []);
-
+  const clasesNav=["nav-link","nav-link","nav-link","nav-link active" ]
   return (
-    <div className="mt-4">
-      <header>
-        <Navegador></Navegador>
+    <div className="container">
+        <Navegador lisClass={clasesNav}></Navegador>
         <h1>Editar operaciones</h1>
         <div className="d-grid justify-content-md-end">
           <p
@@ -44,7 +43,6 @@ export default function CompraBTC() {
             <u>Salir</u>
           </p>
         </div>
-      </header>
       <main>
         <Listado
           modo={'admin'}
