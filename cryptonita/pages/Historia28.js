@@ -1,7 +1,7 @@
 import Card from "../components/Card"
 export default function Historia28() {
 
-    return <div class="container">
+    return <div className="container">
         <div className="row">
             <div className="col-md-2">
             </div>

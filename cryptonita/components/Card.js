@@ -64,7 +64,7 @@ const Card = (props) => {
         </aside>
     } else if (props.modo == "H30") {
         return <aside >
-            <div id = "Card" class="card mt-4">
+            <div id = "Card" className="card mt-4">
                 <div className="card-body">
                     <h3 id="Titulos" className="card-title text-center">Venta de Bitcoins</h3>
                     <h4 id="Titulos" className="text-center">Paso 2 de 3</h4>
