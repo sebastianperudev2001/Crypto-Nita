@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import EditarCliente from "../components/modaledit.component";
 
 const InicioClientes=()=>{
-    const clasesNav=["nav-link","nav-link active","nav-link","nav-link" ]
+    const clasesNav=["nav-link active","nav-link","nav-link" ]
     const listaClientes=[
         {id: 10, nombre: "Ricardo", correo:"@gmail.com", telefono: "999 999 999" }
         ,{id: 11, nombre: "Sebastián", correo:"@gmail.com", telefono: "999 999 999" }

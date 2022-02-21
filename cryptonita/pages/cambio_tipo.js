@@ -6,7 +6,7 @@ import Navegador from "../components/NavBar.component";
 export default function PaginaCambioTipo() {
     const [CambioBTC_PEN,setBTC_PEN] = useState(0)
     const [CambioPEN_BTC,setPEN_BTC] = useState(0)
-    const clasesNav=["nav-link","nav-link","nav-link active","nav-link" ]
+    const clasesNav=["nav-link","nav-link active","nav-link" ]
     return <div className="container">
         <Navegador lisClass={clasesNav}></Navegador>
         <div className="row mt-5">

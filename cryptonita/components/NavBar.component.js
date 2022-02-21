@@ -11,19 +11,9 @@ const Navegador = (props) => {
       <ul className="nav nav-tabs nav-fill">
         <li className="nav-item">
           <button
-            id="/homeAdmin"
-            type="button"
-            className={props.lisClass[0]}
-            onClick={butOnClick}
-          >
-            Home
-          </button>
-        </li>
-        <li className="nav-item">
-          <button
             id="/inicioClientes"
             type="button"
-            className={props.lisClass[1]}
+            className={props.lisClass[0]}
             onClick={butOnClick}
           >
             Clientes
@@ -33,7 +23,7 @@ const Navegador = (props) => {
           <button
             id="/cambio_tipo"
             type="button"
-            className={props.lisClass[2]}
+            className={props.lisClass[1]}
             onClick={butOnClick}
           >
             Tipo de cambio
@@ -43,7 +33,7 @@ const Navegador = (props) => {
           <button
             id="/editarAdminOp"
             type="button"
-            className={props.lisClass[3]}
+            className={props.lisClass[2]}
             onClick={butOnClick}
           >
             Operaciones

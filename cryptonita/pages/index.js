@@ -14,7 +14,7 @@ https://www.npmjs.com/package/typewriter-effect
 export default function Home() {
   const validacionInput = (username, password) => {
     if (username == 'admin@ulima.com' && password == '123') {
-      location.href = '/homeAdmin';
+      location.href = '/inicioClientes';
     } else if (username == 'sebastian@sebas.com' && password == '456') {
       location.href = '/iniciadoSesion';
     } else {

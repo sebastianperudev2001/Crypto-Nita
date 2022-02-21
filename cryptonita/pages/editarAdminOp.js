@@ -28,7 +28,7 @@ export default function CompraBTC() {
       },
     ]);
   }, []);
-  const clasesNav = ['nav-link', 'nav-link', 'nav-link', 'nav-link active'];
+  const clasesNav = ['nav-link', 'nav-link', 'nav-link active'];
   return (
     <div className="container">
       <Navegador lisClass={clasesNav}></Navegador>
