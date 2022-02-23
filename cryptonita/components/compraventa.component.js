@@ -35,7 +35,7 @@ const CompraVenta = (props) => {
               <div className="col-md">
                 <div className="d-flex justify-content-center pt-4">
                 <button type="button" className="btn btn-light" onClick={cambioOC}>
-                  <img src="https://cdn.pixabay.com/photo/2012/04/10/23/46/arrows-27112_960_720.png" className="imgflechas rounded mx-auto d-block"></img>
+                  <img src="/flecha.png" className="imgflechas rounded mx-auto d-block"></img>
                 </button>
                 </div>
               </div>
@@ -48,6 +48,7 @@ const CompraVenta = (props) => {
                   className="form-control"
                   id="recibir"
                   placeholder="0"
+                  readOnly
                 />
               </div>
             </div>
@@ -92,7 +93,7 @@ const CompraVenta = (props) => {
               <div className="col-md">
                 <div className="d-flex justify-content-center pt-4">
                 <button type="button" className="btn btn-light" onClick={cambioOC}>
-                  <img src="https://cdn.pixabay.com/photo/2012/04/10/23/46/arrows-27112_960_720.png" className="imgflechas rounded mx-auto d-block"></img>
+                  <img src="/flecha.png" className="imgflechas rounded mx-auto d-block"></img>
                 </button>
                 </div>
               </div>
@@ -105,6 +106,7 @@ const CompraVenta = (props) => {
                   className="form-control"
                   id="recibir"
                   placeholder="0"
+                  readOnly
                 />
               </div>
             </div>

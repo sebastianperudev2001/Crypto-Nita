@@ -3,8 +3,8 @@ import ButtonLink from "./botonEnlace.component"
 const Listado = (props) => {
     if (props.modo == "admin") {
         return <div className="row container mt-4">
-            <div className="col"/>
-            <div className="col"/>
+            <div className="col" />
+            <div className="col" />
             <div className="col-2">
                 <div className="card">
                     <div className="card-header">
@@ -26,7 +26,7 @@ const Listado = (props) => {
                                 <th>Cliente</th>
                                 <th>Tipo de operacion</th>
                                 <th>Tipo de cambio</th>
-                                <th>Monto</th>
+                                <th>Monto Total</th>
                                 <th>Estado</th>
                             </tr>
                         </thead>
@@ -39,11 +39,11 @@ const Listado = (props) => {
                                         <td>{op.cliente}</td>
                                         <td>{op.tipo}</td>
                                         <td>{op.cambio}</td>
-                                        <td>{op.monto}</td>
+                                        <td>{op.monto*op.cambio+' '+op.moneda}</td>
                                         <td>
                                             <div className="row">
                                                 <div className="col-md">{op.estado}{""} </div>
-                                                <div className="col-md"><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo={props.modo} /></div>
+                                                <div className="col-md"><ButtonLink nombre="Editar" editar={()=>{props.editar(op.id)}} color="btn btn-warning" modo={props.modo} /></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -79,7 +79,7 @@ const Listado = (props) => {
                                     <td>{cliente.nombre}</td>
                                     <td>{cliente.correo}</td>
                                     <td>{cliente.telefono}</td>
-                                    <td><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo="cliente"  /></td>
+                                    <td><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo="cliente" /></td>
                                 </tr>
                             })
                         }
