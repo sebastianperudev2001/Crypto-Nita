@@ -19,17 +19,21 @@ const HisotrialOperaciones = (props) => {
             </tr>
           </thead>
           <tbody id="data_operaciones">
-            {props.Operaciones.map((operacion) => {
-              return (
-                <tr key={operacion.id}>
-                  <td>{operacion.id}</td>
-                  <td>{operacion.FechaHora}</td>
-                  <td>{operacion.Tipo}</td>
-                  <td>{operacion.TipoCamio}</td>
-                  <td>{operacion.Monto}</td>
-                </tr>
-              );
-            })}
+            {
+              props.Operaciones.map((operacion) => {
+                if (operacion.idUsuario == 1) {
+                  return (
+                    <tr key={operacion.id}>
+                      <td>{operacion.id}</td>
+                      <td>{operacion.fecha}</td>
+                      <td>{operacion.tipoOperacion}</td>
+                      <td>{operacion.tipoCambio}</td>
+                      <td>{operacion.monto}</td>
+                    </tr>
+                  );
+                }
+
+              })}
           </tbody>
         </table>
       </div>

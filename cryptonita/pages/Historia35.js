@@ -1,16 +1,18 @@
 import Card from '../components/Card';
+import { useRouter } from "next/router";
 export default function Historia35() {
   //Regresar
   const regresar = () => {
     location.href = '/iniciadoSesion';
   };
-
+  const router = useRouter();
+  const { id } = router.query;
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-2"></div>
         <div className="col-md-8">
-          <Card modo={'H35'} />
+          <Card modo={'H35'} IdTransaccion={id}/>
         </div>
         <div className="col-md-2"></div>
       </div>
