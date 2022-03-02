@@ -12,11 +12,31 @@ Typewriter es un elemento de una librería externa. Revisar la documentación:
 https://www.npmjs.com/package/typewriter-effect
 */
 export default function Home() {
-  const validacionInput = (username, password) => {
-    if (username == 'admin@ulima.com' && password == '123') {
-      location.href = '/inicioClientes';
-    } else if (username == 'sebastian@sebas.com' && password == '456') {
-      location.href = '/iniciadoSesion';
+  const validacionInput = async (username, contra) => {
+    const usuario = {
+      correo: username,
+      password: contra,
+    };
+    const resp = await fetch('/api/iniciosesion', {
+      method: 'POST',
+      body: JSON.stringify(usuario),
+    });
+
+    const data = await resp.json();
+    const usuarioValidar = data.respuesta;
+
+    if (usuarioValidar == null) {
+      console.log('No existe esa vaina oe');
+    } else if (username == 'admin@ulima.com' && password == '123') {
+      localStorage.setItem('iniciadoSesion', username);
+    } else if (contra == usuarioValidar.password) {
+      localStorage.setItem('iniciadoSesion', username);
+
+      if (usuarioValidar.estado == 'activo') {
+        location.href = '/iniciadoSesion';
+      } else if (usuarioValidar.estado == 'inactivo') {
+        location.href = '/espera';
+      }
     } else {
       console.log('ingrese algo');
     }
@@ -29,3 +49,5 @@ export default function Home() {
     </>
   );
 }
+
+//Validar el token generado al azar
