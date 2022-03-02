@@ -36,6 +36,7 @@ const modificarTransaccion =async (transaccion) => {
     Transac.numeroCuenta = transaccion.numeroCuenta
     Transac.numeroTransaccion = transaccion.numeroTransaccion
     Transac.numeroBilletera = transaccion.numeroBilletera
+    Transac.estado = transaccion.estado
     console.log(transaccion.numeroCuenta)
     await Transac.save()
 
