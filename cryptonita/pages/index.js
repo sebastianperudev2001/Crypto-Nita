@@ -28,9 +28,9 @@ export default function Home() {
     if (usuarioValidar == null) {
       console.log('No existe esa vaina oe');
     } else if (username == 'admin@ulima.com' && password == '123') {
-      localStorage.setItem('iniciadoSesion', username);
+      localStorage.setItem('iniciadoSesion', usuarioValidar.id);
     } else if (contra == usuarioValidar.password) {
-      localStorage.setItem('iniciadoSesion', username);
+      localStorage.setItem('iniciadoSesion', usuarioValidar.id);
 
       if (usuarioValidar.estado == 'activo') {
         location.href = '/iniciadoSesion';
