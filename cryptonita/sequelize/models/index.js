@@ -12,7 +12,12 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
 }
 
 /*fs
@@ -25,13 +30,19 @@ if (config.use_env_variable) {
     db[model.name] = model;
   });*/
 
-const modelTransaccion = require("../models/transaccion")
-const modelUsuario = require("../models/usuario")
+const modelTransaccion = require('../models/transaccion');
+const modelUsuario = require('../models/usuario');
 
-db[modelTransaccion(sequelize, Sequelize.DataTypes).name] = model(sequelize, Sequelize.DataTypes);
-db[modelUsuario(sequelize, Sequelize.DataTypes).name] = modelUsuario(sequelize, Sequelize.DataTypes);
+db[modelTransaccion(sequelize, Sequelize.DataTypes).name] = modelTransaccion(
+  sequelize,
+  Sequelize.DataTypes
+);
+db[modelUsuario(sequelize, Sequelize.DataTypes).name] = modelUsuario(
+  sequelize,
+  Sequelize.DataTypes
+);
 
-Object.keys(db).forEach(modelName => {
+Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }

@@ -1,22 +1,56 @@
 import Link from 'next/link';
+import { useState } from 'react';
 
-const RegistroPaso02 = () => {
+const RegistroPaso02 = (props) => {
+  const [correo, setCorreo] = useState('');
+  const [contra, setContra] = useState('');
+  const [contraVeri, setContraVeri] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [estadoContra, setEstadoContra] = useState(true);
+
+  const txtCorreoOnChange = (event) => {
+    setCorreo(event.target.value);
+  };
+
+  const txtContraOnChange = (event) => {
+    setContra(event.target.value);
+  };
+  const txtContraVeriOnChange = (event) => {
+    setContraVeri(event.target.value);
+  };
+  const txtTelefonoOnChange = (event) => {
+    setTelefono(event.target.value);
+  };
+
+  const butFinalizar = () => {
+    if (contra == contraVeri) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+      props.onGuardarUsuario(id, correo, contra, telefono);
+      localStorage.setItem('iniciadoSesion', correo);
+      location.href = '/espera';
+    } else {
+      setEstadoContra(false);
+    }
+  };
+
   return (
     <>
-      <div class="card text-center formulario">
-        <div class="card-header">
+      <div className="card text-center formulario">
+        <div className="card-header">
           <h1>Registro de Cuenta</h1>
         </div>
-        <div class="card-body">
-          <form method="POST" action="/espera">
+        <div className="card-body">
+          <form>
             <div className="form-group">
-              <label htmlFor="correoInput" htm>Correo Electrónico</label>
+              <label htmlFor="correoInput">Correo Electrónico</label>
               <input
                 type="email"
                 className="form-control"
                 id="correoInput"
                 placeholder="Ingrese su correo electrónico"
                 required
+                onChange={txtCorreoOnChange}
               />
             </div>
             <div className="form-group">
@@ -27,6 +61,7 @@ const RegistroPaso02 = () => {
                 id="passwordInput"
                 placeholder="Ingrese su contraseña"
                 required
+                onChange={txtContraOnChange}
               />
             </div>
 
@@ -35,9 +70,10 @@ const RegistroPaso02 = () => {
               <input
                 type="password"
                 className="form-control"
-                id="passwordInput"
+                id="passwordInputVerificacion"
                 placeholder="Ingrese su contraseña de nuevo"
                 required
+                onChange={txtContraVeriOnChange}
               />
             </div>
 
@@ -49,20 +85,26 @@ const RegistroPaso02 = () => {
                 id="phoneInput"
                 placeholder="Ingrese su número telefónico"
                 required
+                onChange={txtTelefonoOnChange}
               />
             </div>
-            <button type="submit" className="btn btn-success btn-lg mt-4 mb-4">
+            <button
+              type="button"
+              className="btn btn-success btn-lg mt-4 mb-4"
+              onClick={butFinalizar}
+            >
               Finalizar
             </button>
 
-            <Link href="/registroCliente">
+            <Link href={`/registroCliente`}>
               <button type="button" className="btn btn-danger btn-lg mt-4 mb-4">
                 Regresar
               </button>
             </Link>
           </form>
+          <p className="d-none">Contraseña no coincide</p>
         </div>
-        <div class="card-footer text-muted">Paso 02</div>
+        <div className="card-footer text-muted">Paso 02</div>
       </div>
     </>
   );
