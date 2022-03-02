@@ -33,14 +33,9 @@ if (config.use_env_variable) {
 const modelTransaccion = require('../models/transaccion');
 const modelUsuario = require('../models/usuario');
 
-db[modelTransaccion(sequelize, Sequelize.DataTypes).name] = modelTransaccion(
-  sequelize,
-  Sequelize.DataTypes
-);
-db[modelUsuario(sequelize, Sequelize.DataTypes).name] = modelUsuario(
-  sequelize,
-  Sequelize.DataTypes
-);
+db[modelTransaccion(sequelize, Sequelize.DataTypes).name] = modelTransaccion(sequelize, Sequelize.DataTypes);
+db[modelUsuario(sequelize, Sequelize.DataTypes).name] = modelUsuario(sequelize,Sequelize.DataTypes);
+
 
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
