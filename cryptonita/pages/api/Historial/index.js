@@ -1,12 +1,24 @@
-const HistorialHandle = (req, res) => {
+import { guardarTransaccion, obtenerTransaccion, modificarTransaccion } from "../../../dao/Transacciones"
+
+const HistorialHandle = async (req, res) => {
     if (req.method == "GET") {
-        const operaciones = [
-            { id: 10, FechaHora: "01/01/22-12:00:00", Tipo: "Venta", TipoCamio: "BTC-PEN", Monto: 200 },
-            { id: 20, FechaHora: "02/01/22-12:00:00", Tipo: "Compra", TipoCamio: "PEN-BTC", Monto: 1000 },
-            { id: 30, FechaHora: "03/01/22-12:00:00", Tipo: "Venta", TipoCamio: "PEN-BTC", Monto: 300 }
-        ]
+        const operaciones = await obtenerTransaccion()
         res.json({
             operaciones: operaciones,
+            msg: ""
+        })
+    } else if (req.method == "POST") {
+        //Registrar
+        console.log("HOLA")
+        const data = JSON.parse(req.body)
+        guardarTransaccion(data.tipoCambio, data.tipoOperacion, data.monto, data.idUsuario)
+        res.json({
+            msg: ""
+        })
+    } else if (req.method == "PUT") {
+        const data = JSON.parse(req.body)
+        await modificarTransaccion(data)
+        res.json({
             msg: ""
         })
     } else {

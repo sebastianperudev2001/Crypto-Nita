@@ -22,7 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     tipoCambio: DataTypes.FLOAT,
     tipoOperacion: DataTypes.STRING,
     monto: DataTypes.FLOAT,
-    idUsuario:DataTypes.INTEGER
+    idUsuario:DataTypes.INTEGER,
+    estado:DataTypes.STRING,
+    numeroTransaccion:DataTypes.INTEGER,
+    numeroBilletera:DataTypes.INTEGER,
+    numeroCuenta:DataTypes.INTEGER,
+    
   }, {
     sequelize,
     modelName: 'Transaccion',
