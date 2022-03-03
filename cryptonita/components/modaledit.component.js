@@ -2,24 +2,40 @@ import { Modal, Button } from "react-bootstrap"
 import { useEffect, useState } from 'react';
 
 const EditarCliente = (props) => {
-    const [txtNombreProyecto, setTxtNombreProyecto] = useState("")
+    const [txtNombre, setTxtNombre] = useState("")
     const [txtUsuario, setTxtUsuario] = useState("")
-    const [txtRating, setTxtRating] = useState(0)
-
-    const txtNombreProyectoOnChange = (event) => {
-        setTxtNombreProyecto(event.target.value)
+    const [txtCorreo, setTxtCorreo] = useState(0)
+    const [txtTelefono, setTxtTelefono] = useState(0)
+    const [txtEstado, setTxtEstado] = useState(0)
+    
+    useEffect(() => {
+        if (props.cliente != null) {
+            //setIdProyecto(props.proyecto.id)
+            setTxtNombre(props.cliente.nombre)
+            setTxtUsuario(props.cliente.apellido)
+            setTxtCorreo(props.cliente.correo)
+            setTxtTelefono(props.cliente.telefono)
+            setTxtEstado(props.cliente.estado)
+        }
+    }, [props.cliente])
+    
+    const txtNombreOnChange = (event) => {
+        setTxtNombre(event.target.value)
     }
-
-    const txtUsuarioOnChange = (event) => {
+    const txtApellidoOnChange = (event) => {
         setTxtUsuario(event.target.value)
     }
-
-    const txtRatingOnChange = (event) => {
-        setTxtRating(event.target.value)
+    const txtCorreoOnChange = (event) => {
+        setTxtCorreo(event.target.value)
     }
-
-    const butGuardarOnClick = () => {
-        props.onGuardarProyecto(txtNombreProyecto, txtUsuario, txtRating)
+    const txtTelefonoOnChange=(event)=>{
+        setTxtTelefono(event.target.value)
+    }
+    const butOnGuardar=()=>{
+        props.actualizarCliente(props.cliente.id, txtNombre, txtUsuario, txtCorreo, txtTelefono, txtEstado)
+    }
+    const txtEstadoOnChange=(event)=>{
+        setTxtEstado(event.target.value)
     }
     return <Modal show={props.mostrar}
         onHide={props.ocultar}>
@@ -33,39 +49,38 @@ const EditarCliente = (props) => {
                         Nombre
                     </label>
                     <input className="form-control"
-                        type="text" defaultValue="Ricardo"
-                        onChange={txtNombreProyectoOnChange} />
+                        type="text" defaultValue={props.cliente.nombre}
+                        onChange={txtNombreOnChange}/>
                 </div>
                 <div>
                     <label className="form-label">
                         Apellidos
                     </label>
                     <input className="form-control"
-                        type="text" defaultValue="Silva"
-                        onChange={txtUsuarioOnChange} />
+                        type="text" defaultValue={props.cliente.apellido}
+                        onChange={txtApellidoOnChange} />
                 </div>
                 <div>
                     <label className="form-label">
                         Correo
                     </label>
                     <input className="form-control"
-                        type="email" defaultValue="gmail.com"
-                        onChange={txtRatingOnChange} />
+                        type="email" defaultValue={props.cliente.correo}
+                        onChange={txtCorreoOnChange} />
                 </div>
                 <div>
                     <label className="form-label">
                         Teléfono
                     </label>
                     <input className="form-control"
-                        type="text" defaultValue="999 999 999"
-                        onChange={txtRatingOnChange} />
+                        type="text" defaultValue={props.cliente.telefono}
+                        onChange={txtTelefonoOnChange} />
                 </div>
                 <div>
                     <label for="" className="form-label">Estado</label>
-                    <select className="form-select" aria-label="Default select example">
-                        <option selected>Elige una Estado</option>
-                        <option value="1">Pendiente</option>
-                        <option value="2">Validado</option>
+                    <select onChange={txtEstadoOnChange} defaultValue={txtEstado} className="form-select" aria-label="Default select example">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Validado">Validado</option>
                     </select>
                 </div>
             </form>
@@ -73,7 +88,7 @@ const EditarCliente = (props) => {
 
         <Modal.Footer>
             <Button variant="secondary" onClick={props.ocultar}>Cerrar</Button>
-            <Button variant="primary">Guardar</Button>
+            <button className="btn btn-primary" onClick={butOnGuardar} variant="primary">Guardar</button>
         </Modal.Footer>
     </Modal>
 }
