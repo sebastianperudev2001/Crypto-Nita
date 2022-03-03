@@ -48,7 +48,7 @@ export default function Home() {
 
     console.log('Usuario Activo');
     localStorage.setItem('iniciadoSesion', usuarioValidar.id);
-    location.href = '/inicioClientes';
+    location.href = '/iniciadoSesion';
   };
 
   return (
