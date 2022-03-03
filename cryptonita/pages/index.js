@@ -24,31 +24,31 @@ export default function Home() {
 
     const data = await resp.json();
     const usuarioValidar = data.respuesta;
-    console.log(usuarioValidar)
-    if (usuarioValidar == null){
-      console.log("Usuario no existe")
-      return
+    console.log(usuarioValidar);
+    if (usuarioValidar == null) {
+      console.log('Usuario no existe');
+      return;
     }
 
-    if(contra != usuarioValidar.password){
-      console.log("Contraseña Incorrecta")
-      return
+    if (contra != usuarioValidar.password) {
+      console.log('Contraseña Incorrecta');
+      return;
     }
 
-    if(usuarioValidar.estado == "administrador"){
-      console.log("Bienvenido Admin")
-      localStorage.setItem("esAdmin",true)
-      location.href="/homeAdmin"
-    }
-    
-    if(usuarioValidar.estado != "activo"){
-      console.log("Usuario no activado")
-      return
+    if (usuarioValidar.estado == 'administrador') {
+      console.log('Bienvenido Admin');
+      localStorage.setItem('esAdmin', true);
+      location.href = '/homeAdmin';
     }
 
-    console.log("Usuario Activo")
-    localStorage.setItem('iniciadoSesion', usuarioValidar.id)
-    location.href = "/inicioClientes"
+    if (usuarioValidar.estado != 'activo') {
+      console.log('Usuario no activado');
+      return;
+    }
+
+    console.log('Usuario Activo');
+    localStorage.setItem('iniciadoSesion', usuarioValidar.id);
+    location.href = '/inicioClientes';
   };
 
   return (
