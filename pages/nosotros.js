@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import BotonMenuPrincipal from '../components/botonMenuPrincipal.component';
+import BotonMenuPrincipal from '../components/BotonMenuPrincipal.component';
 import Footer from '../components/Footer.component';
 import Nosotros from '../components/Nosotros.component';
 

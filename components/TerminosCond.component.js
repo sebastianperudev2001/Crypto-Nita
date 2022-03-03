@@ -1,4 +1,4 @@
-import BotonMenuPrincipal from '../components/botonMenuPrincipal.component';
+import BotonMenuPrincipal from '../components/BotonMenuPrincipal.component';
 
 const TerminosCond = () => {
   return (
