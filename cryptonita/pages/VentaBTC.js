@@ -3,8 +3,9 @@ import CompraVenta from '../components/components-compraventa/compraventa.compon
 
 export default function VentaBTC() {
   const [CambioBTC_PEN, setBTC_PEN] = useState(0);
-
+  const [IdUsuario,setIdUsuario] = useState(0)
   useEffect(async () => {
+    setIdUsuario(localStorage.getItem('iniciadoSesion'))
     let response = await fetch("/api/CambiarTipoBTC_PEN")
     response = await response.json()
     response = response.cambio
@@ -44,6 +45,7 @@ export default function VentaBTC() {
           btcpen={CambioBTC_PEN}
           tipo={'venta'}
           solicitar={solicitar}
+          IdUsuario={IdUsuario}
         />
       </main>
     </div>

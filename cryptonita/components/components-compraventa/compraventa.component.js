@@ -73,14 +73,14 @@ const CompraVenta = (props) => {
   const auxsolicitarCompra = async () => {
     const recibir = document.getElementById("recibir_compra")
     const monto = recibir.value / props.penbtc
-    const response = await props.solicitar(props.penbtc, monto, 1)
+    const response = await props.solicitar(props.penbtc, monto, props.IdUsuario)
     return response.id
   };
 
   const auxsolicitarVenta = async () =>{
     const dar = document.getElementById("dar_venta")
     const monto = dar.value
-    const response = await props.solicitar(props.btcpen, monto, 1)
+    const response = await props.solicitar(props.btcpen, monto, props.IdUsuario)
     return response.id
   }
 
