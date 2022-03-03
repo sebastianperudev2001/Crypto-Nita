@@ -27,14 +27,15 @@ export default function Home() {
 
     if (usuarioValidar == null) {
       console.log('No existe esa vaina oe');
-    } else if (username == 'admin@ulima.com' && password   == '123') {
+    } else if (username == 'admin@ulima.com' && contra == '123') {
       localStorage.setItem('iniciadoSesion', usuarioValidar.id);
+      location.href = '/inicioClientes';
     } else if (contra == usuarioValidar.password) {
       localStorage.setItem('iniciadoSesion', usuarioValidar.id);
 
-      if (usuarioValidar.estado == 'activo') {
+      if (usuarioValidar.estado == 'Validado') {
         location.href = '/iniciadoSesion';
-      } else if (usuarioValidar.estado == 'inactivo') {
+      } else if (usuarioValidar.estado == 'Pendiente') {
         location.href = '/espera';
       }
     } else {
