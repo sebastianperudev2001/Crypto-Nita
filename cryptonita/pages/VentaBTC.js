@@ -1,9 +1,28 @@
-import { useState } from 'react';
-import CompraVenta from '../components/compraventa.component';
+import { useState,useEffect } from 'react';
+import CompraVenta from '../components/components-compraventa/compraventa.component';
 
 export default function VentaBTC() {
   const [CambioBTC_PEN, setBTC_PEN] = useState(0);
-  const [CambioPEN_BTC, setPEN_BTC] = useState(0);
+
+  useEffect(async () => {
+    let response = await fetch("/api/CambiarTipoBTC_PEN")
+    response = await response.json()
+    response = response.cambio
+    setBTC_PEN(response)
+  }, [])
+
+  const solicitar = async (cambio, monto, usuario) => {
+    let response = await fetch("/api/VentaBTC", {
+      method: "POST",
+      body: JSON.stringify({
+        tipoCambio: cambio,
+        monto: monto,
+        idUsuario: usuario,
+      })
+    })
+    response = response.json()
+    return response
+  }
 
   return (
     <div className="mt-4">
@@ -23,8 +42,8 @@ export default function VentaBTC() {
       <main>
         <CompraVenta
           btcpen={CambioBTC_PEN}
-          penbtc={CambioPEN_BTC}
           tipo={'venta'}
+          solicitar={solicitar}
         />
       </main>
     </div>

@@ -13,10 +13,8 @@ const obtenerOp = (arreglo,id) =>{
             return ope
         }
     }
-
     return null
 }
-
 
 
 export {navegar,obtenerOp}

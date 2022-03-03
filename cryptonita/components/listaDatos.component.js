@@ -1,20 +1,20 @@
 import ButtonLink from "./botonEnlace.component"
 
+const devolverCadena = (operacion) =>{
+    if (operacion == "Compra"){
+        return " PEN"
+    }
+
+    if (operacion == "Venta"){
+        return " BTC"
+    }
+
+    return ""
+}
+
 const Listado = (props) => {
     if (props.modo == "admin") {
         return <div className="row container mt-4">
-            <div className="col" />
-            <div className="col" />
-            <div className="col-2">
-                <div className="card">
-                    <div className="card-header">
-                        <h6>Monto total</h6>
-                    </div>
-                    <div className="card-body">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
             <div className="row container mt-2">
                 <div className="col-md" />
                 <div className="col-md-10 table-responsive">
@@ -32,14 +32,14 @@ const Listado = (props) => {
                         </thead>
                         <tbody id="data_tratos">
                             {
-                                props.operaciones.map((op) => {
+                                props.transacciones.map((op) => {
                                     return <tr key={op.id}>
                                         <td>{op.id}</td>
-                                        <td>{op.fechahora}</td>
-                                        <td>{op.cliente}</td>
-                                        <td>{op.tipo}</td>
-                                        <td>{op.cambio}</td>
-                                        <td>{op.monto*op.cambio+' '+op.moneda}</td>
+                                        <td>{op.fecha.substring(0,10)+" "+op.hora.substring(0,8)}</td>
+                                        <td>{op.idUsuario}</td>
+                                        <td>{op.tipoOperacion}</td>
+                                        <td>{op.tipoCambio}</td>
+                                        <td>{op.monto+devolverCadena(op.tipoOperacion)}</td>
                                         <td>
                                             <div className="row">
                                                 <div className="col-md">{op.estado}{""} </div>

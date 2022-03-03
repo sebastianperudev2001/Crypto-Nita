@@ -5,19 +5,33 @@ import Navegador from '../components/NavBar.component';
 import { obtenerOp } from '../dao/metodos';
 
 export default function CompraBTC() {
-  const [ListadoOperaciones, setListadoOperaciones] = useState([]);
+  const clasesNav = ['nav-link', 'nav-link', 'nav-link active'];
+  const [ListadoTransacciones, setListadoTransacciones] = useState([]);
   const [MostrarModal, setMostrarModal] = useState(false);
   const [OpEnEdicion, setOperacion] = useState({
-    id: '',
-    fechahora: '',
-    cliente: '',
-    tipo: '',
-    cambio: '',
-    monto: '',
-    moneda: '',
-    estado: '',
+    id: '1',
+    fecha: '--------------',
+    hora: '--------------',
+    cliente: '--------------',
+    tipo: '--------------',
+    cambio: '--------------',
+    monto: '--------------',
+    moneda: '--------------',
+    estado: '--------------',
   })
-  const [EstadoEdicion, setEstadoEdicion] = useState('')
+
+  const llamarHTTP = async() =>{
+    let response = await fetch("/api/EdicionTransacciones")
+    response = await response.json()
+    let transacciones = response.transacciones
+    transacciones.splice(0, 2)
+    return transacciones
+  }
+
+  useEffect(async () => {
+    let transacciones = await llamarHTTP()
+    setListadoTransacciones(transacciones)
+  }, [])
 
   const ocultarModal = () => {
     setMostrarModal(false);
@@ -25,33 +39,29 @@ export default function CompraBTC() {
 
   const mostrarModalyEdit = (id) => {
     setMostrarModal(true);
-    setOperacion(obtenerOp(ListadoOperaciones, id))
+    setOperacion(obtenerOp(ListadoTransacciones, id))
   };
 
-  useEffect(() => {
-    setListadoOperaciones([
-      {
-        id: '1',
-        fechahora: '17/01/15 20:00:05',
-        cliente: 'Pablito Perez',
-        tipo: 'Compra',
-        cambio: '1.5962',
-        monto: '1500',
-        moneda: 'BTC',
-        estado: 'Pendiente',
-      }, {
-        id: '2',
-        fechahora: '17/01/15 20:00:05',
-        cliente: 'Pablito Perez',
-        tipo: 'Compra',
-        cambio: '1.5962',
-        monto: '1500',
-        moneda: 'BTC',
-        estado: 'Pendiente',
-      },
-    ]);
-  }, []);
-  const clasesNav = ['nav-link', 'nav-link', 'nav-link active'];
+  const guardarCambiosEstado = async (id,estado) =>{
+    const response = await fetch(`/api/EdicionTransacciones/${id}`,{
+      method:"PUT",
+      body:JSON.stringify({
+        estado:estado
+      })
+    })
+
+    var msg = await response.json()
+
+    if(msg.msg == "ok"){
+      setTimeout(async ()=>{
+        setMostrarModal(false)
+        let transacciones = await llamarHTTP()
+        setListadoTransacciones(transacciones)
+      },1000)
+    }
+  }
+
+
   return (
     <div className="container">
       <Navegador lisClass={clasesNav}></Navegador>
@@ -60,11 +70,14 @@ export default function CompraBTC() {
       <main>
         <Listado
           modo={'admin'}
-          operaciones={ListadoOperaciones}
+          transacciones={ListadoTransacciones}
           editar={mostrarModalyEdit}
         ></Listado>
       </main>
-      <ModalLista ocultar={ocultarModal} mostrar={MostrarModal} datosOp={OpEnEdicion}></ModalLista>
+      <ModalLista ocultar={ocultarModal} 
+          mostrar={MostrarModal} 
+          datosOp={OpEnEdicion}
+          guardar={guardarCambiosEstado}></ModalLista>
     </div>
   );
 }

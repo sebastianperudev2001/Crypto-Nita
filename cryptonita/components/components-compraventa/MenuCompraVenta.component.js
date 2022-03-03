@@ -24,7 +24,7 @@ const MenuCompraVenta = (props) => {
                 onClick={comprarOC}
               >
                 <p className="fs-1">Compra</p>
-                Cambio: {props.btcpen}
+                Cambio: {props.penbtc}
               </button>
               <button
                 className="btn btn-primary"
@@ -32,7 +32,7 @@ const MenuCompraVenta = (props) => {
                 onClick={venderOC}
               >
                 <p className="fs-1">Venta</p>
-                <span className="text-center">Cambio:</span> {props.penbtc}
+                <span className="text-center">Cambio:</span> {props.btcpen}
               </button>
             </div>
           </div>

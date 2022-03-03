@@ -1,8 +1,5 @@
 'use strict';
 
-const { DATE } = require("sequelize");
-const { TIME } = require("sequelize");
-
 module.exports = {
   async up(queryInterface, Sequelize) {
     /**
