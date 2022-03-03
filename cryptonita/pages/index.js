@@ -43,6 +43,7 @@ export default function Home() {
     
     if(usuarioValidar.estado != "activo"){
       console.log("Usuario no activado")
+      return
     }
 
     console.log("Usuario Activo")
