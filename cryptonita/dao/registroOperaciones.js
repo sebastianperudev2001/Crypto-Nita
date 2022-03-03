@@ -38,4 +38,9 @@ const validacionInicioSesion = async (correoUser) => {
   return usuario;
 };
 
-export { guardarDataPaso01, guardarDataPaso02, validacionInicioSesion };
+export {
+  guardarDataPaso01,
+  guardarDataPaso02,
+  validacionInicioSesion,
+  findUsuario,
+};
