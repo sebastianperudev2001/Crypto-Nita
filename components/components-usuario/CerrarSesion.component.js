@@ -3,9 +3,10 @@ import Link from 'next/link';
 const CerrarSesion = () => {
   const cerrarLocalStorage = () => {
     localStorage.removeItem('iniciadoSesion');
-    const x = localStorage.getItem("esAdmin")
-    if(x!=null){
-      localStorage.removeItem("esAdmin")
+    localStorage.removeItem('id');
+    const x = localStorage.getItem('esAdmin');
+    if (x != null) {
+      localStorage.removeItem('esAdmin');
     }
   };
   return (
