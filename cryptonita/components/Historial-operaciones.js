@@ -21,7 +21,7 @@ const HisotrialOperaciones = (props) => {
           <tbody id="data_operaciones">
             {
               props.Operaciones.map((operacion) => {
-                if (operacion.idUsuario == 1) {
+                if (operacion.idUsuario == props.IdUsuario) {
                   return (
                     <tr key={operacion.id}>
                       <td>{operacion.id}</td>

@@ -5,6 +5,7 @@ const NavBarUsuario = (props) => {
   const butOnClick = (event) => {
     const link = event.target.id;
     navegar(link);
+
   };
   return (
     <div className="navegador mt-2 mb-2">
@@ -31,10 +32,14 @@ const NavBarUsuario = (props) => {
         </li>
         <li className="nav-item">
           <button
-            id="/PruebaTabla"
+            id="/HistorialTransacciones"
             type="button"
             className={props.lisClass[2]}
-            onClick={butOnClick}
+            onClick={
+              (() => {
+                  location.href = `/HistorialTransacciones?id=${props.IdUsiario}`
+              })
+          }
           >
             Ver historial
           </button>

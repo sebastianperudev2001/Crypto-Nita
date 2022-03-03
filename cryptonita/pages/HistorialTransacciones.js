@@ -1,8 +1,11 @@
 import HisotrialOperaciones from '../components/Historial-operaciones';
 import { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
 
 export default function TablaOp() {
   const [listaOperacioes, setlistaOperacioes] = useState([]);
+  const router = useRouter();
+  const { id } = router.query;
 
   useEffect(async () => {
     let response = await fetch('/api/Historial');
@@ -17,7 +20,7 @@ export default function TablaOp() {
 
   return (
     <div className="container">
-      <HisotrialOperaciones Operaciones={listaOperacioes} />
+      <HisotrialOperaciones Operaciones={listaOperacioes} IdUsuario={id}/>
       <button className="btn btn-danger" onClick={regresar}>
         {' '}
         Regresar

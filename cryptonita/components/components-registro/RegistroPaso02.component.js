@@ -27,7 +27,7 @@ const RegistroPaso02 = (props) => {
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id');
       props.onGuardarUsuario(id, correo, contra, telefono);
-      localStorage.setItem('iniciadoSesion', correo);
+      localStorage.setItem('iniciadoSesion', id);
       location.href = '/espera';
     } else {
       setEstadoContra(false);
