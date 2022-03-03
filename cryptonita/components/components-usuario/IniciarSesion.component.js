@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 const IniciarSesion = () => {
   const lisClases = ['nav-link active', 'nav-link', 'nav-link'];
-  const [ID, setID] = useState(false)
+  const [ID, setID] = useState(0)
   useEffect(() => {
     setID(localStorage.getItem('iniciadoSesion'))
   }, [])
