@@ -41,7 +41,7 @@ export default function Home() {
       location.href="/inicioClientes"
     }
     
-    if(usuarioValidar.estado != "activo"){
+    if(usuarioValidar.estado != 'Validado'){
       console.log("Usuario no activado")
       return
     }
