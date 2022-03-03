@@ -3,11 +3,13 @@ import MenuCompraVenta from '../components/components-compraventa/MenuCompraVent
 import NavBarUsuario from '../components/NavBarUsuario.component';
 
 const CompraVentaMenu = () => {
+  const [ID, setID] = useState(0)
   const [CambioBTCPEN, setCambioBTCPEN] = useState(0);
   const [CambioPENBTC, setCambioPENBTC] = useState(0);
   const lisClases = ['nav-link', 'nav-link active', 'nav-link'];
 
   useEffect(async ()=>{
+    setID(localStorage.getItem('iniciadoSesion'))
     let response = await fetch("/api/CambiarTipoBTC_PEN")
     response = await response.json()
     response = response.cambio
@@ -22,7 +24,7 @@ const CompraVentaMenu = () => {
     <div className="mt-4">
       <header>
         <h1>Compra/Venta de BTC</h1>
-        <NavBarUsuario lisClass={lisClases} />
+        <NavBarUsuario lisClass={lisClases} IdUsiario={ID}/>
       </header>
       <MenuCompraVenta btcpen={CambioBTCPEN} penbtc={CambioPENBTC} />
     </div>
