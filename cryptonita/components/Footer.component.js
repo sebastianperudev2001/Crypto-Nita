@@ -23,7 +23,13 @@ const Footer = () => {
 
           <div id="terminosCondiciones" className="textoAccionable">
             <Link href="/terminosCondiciones">
-              <a>Términos y Condiciones</a>
+              <a className="me-4">Términos y Condiciones</a>
+            </Link>
+          </div>
+
+          <div id="contacto" className="textoAccionable">
+            <Link href="/contactanos">
+              <a>Contactanos</a>
             </Link>
           </div>
         </div>
