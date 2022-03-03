@@ -38,7 +38,7 @@ export default function Home() {
     if(usuarioValidar.estado == "administrador"){
       console.log("Bienvenido Admin")
       localStorage.setItem("esAdmin",true)
-      location.href="/homeAdmin"
+      location.href="/inicioClientes"
     }
     
     if(usuarioValidar.estado != "activo"){
