@@ -24,23 +24,30 @@ export default function Home() {
 
     const data = await resp.json();
     const usuarioValidar = data.respuesta;
-
-    if (usuarioValidar == null) {
-      console.log('No existe esa vaina oe');
-    } else if (username == 'admin@ulima.com' && contra == '123') {
-      localStorage.setItem('iniciadoSesion', usuarioValidar.id);
-      location.href = '/inicioClientes';
-    } else if (contra == usuarioValidar.password) {
-      localStorage.setItem('iniciadoSesion', usuarioValidar.id);
-
-      if (usuarioValidar.estado == 'Validado') {
-        location.href = '/iniciadoSesion';
-      } else if (usuarioValidar.estado == 'Pendiente') {
-        location.href = '/espera';
-      }
-    } else {
-      console.log('ingrese algo');
+    console.log(usuarioValidar)
+    if (usuarioValidar == null){
+      console.log("Usuario no existe")
+      return
     }
+
+    if(contra != usuarioValidar.password){
+      console.log("Contraseña Incorrecta")
+      return
+    }
+
+    if(usuarioValidar.estado == "administrador"){
+      console.log("Bienvenido Admin")
+      localStorage.setItem("esAdmin",true)
+      location.href="/homeAdmin"
+    }
+    
+    if(usuarioValidar.estado != "activo"){
+      console.log("Usuario no activado")
+    }
+
+    console.log("Usuario Activo")
+    localStorage.setItem('iniciadoSesion', usuarioValidar.id)
+    location.href = "/inicioClientes"
   };
 
   return (

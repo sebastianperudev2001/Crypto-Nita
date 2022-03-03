@@ -19,18 +19,33 @@ export default function CompraBTC() {
     monto: '--------------',
     moneda: '--------------',
     estado: '--------------',
+    nombreCliente:'----------------'
   })
+  const [mostrarContenido,setMostrarContenido] = useState(false)
 
   const llamarHTTP = async() =>{
     let response = await fetch("/api/EdicionTransacciones")
     response = await response.json()
     let transacciones = response.transacciones
-    transacciones.splice(0, 2)
+    transacciones.length = transacciones.length - 2
+    for(let obj of transacciones){
+      let name = await obtenerNombre(obj.idUsuario)
+      obj.nombreCliente = name
+    }
     return transacciones
   }
 
   useEffect(async () => {
+<<<<<<< HEAD
     let montoTotal=0;
+=======
+    const admin = localStorage.getItem("esAdmin")
+    if(admin != "true"){
+      location.href="/"
+      return
+    }
+    setMostrarContenido(true)
+>>>>>>> 035175fd3c6c701bcb7e33cb05d7c3fc7a8060ac
     let transacciones = await llamarHTTP()
     setListadoTransacciones(transacciones)
     for(let trans of transacciones){
@@ -73,6 +88,22 @@ export default function CompraBTC() {
     }
   }
 
+  const obtenerNombre = async(id) =>{
+    let response = await fetch("/api/EdicionTransacciones/usuario",{
+      method:"POST",
+      body:JSON.stringify({
+        id:id
+      })
+    })
+    response = await response.json()
+    response = response.usuario
+    const nombre = response.nombre + " " + response.apellido
+    return nombre
+  }
+
+  if(mostrarContenido != true){
+    return <div></div>
+  }
 
   return (
     <div className="container">
@@ -89,6 +120,7 @@ export default function CompraBTC() {
           modo={'admin'}
           transacciones={ListadoTransacciones}
           editar={mostrarModalyEdit}
+          nombre = {obtenerNombre}
         ></Listado>
       </main>
       <ModalLista ocultar={ocultarModal} 

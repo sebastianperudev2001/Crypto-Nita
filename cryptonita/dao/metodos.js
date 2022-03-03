@@ -16,7 +16,6 @@ const obtenerOp = (arreglo,id) =>{
     return null
 }
 
-
-export {navegar,obtenerOp}
+export {navegar,obtenerOp,}
 
 

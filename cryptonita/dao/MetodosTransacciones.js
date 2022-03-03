@@ -20,9 +20,9 @@ const guardarTransaccionInicial = async(cambio,operacion,monto,idusuario) =>{
 }
 
 const obtenerTransacciones = async () =>{
-    const transacciones = Transaccion.findAll({
+    const transacciones = await Transaccion.findAll({
         order:[
-            ["id","asc"]
+            ["id","desc"]
         ]
     })
 
@@ -45,5 +45,15 @@ const modificarTransaccionEstado = async (id,estado) =>{
     await transaccionMod.save()
 }
 
+const obtenerUsuarioUnico = (id) =>{
+    const usuario = db.Usuario.findOne({
+        where:{
+            id:id
+        }
+    })
 
-export {guardarTransaccionInicial,obtenerTransacciones,modificarTransaccionEstado}
+    return usuario
+}
+
+
+export {guardarTransaccionInicial,obtenerTransacciones,modificarTransaccionEstado,obtenerUsuarioUnico}

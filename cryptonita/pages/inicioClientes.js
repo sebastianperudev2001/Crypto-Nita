@@ -9,6 +9,17 @@ const InicioClientes=()=>{
     const [posicion, setPosicion]=useState(0)
     const [listadoClientes, setListadoClientes] = useState([])
     const [modoFormulario, setModoFormulario] = useState("nuevo") // modo: nuevo | edicion
+    const [mostrarContenido,setMostrarContenido] = useState(false)
+
+  useEffect(async () => {
+    const admin = localStorage.getItem("esAdmin")
+    if(admin != "true"){
+      location.href="/"
+      return
+    }
+    setMostrarContenido(true)
+  }, [])
+  
     const [cliente, setCliente]= useState("")
     const obtenerClientesHTTP = async () => {
         let response = await fetch("/api/Clientes")
@@ -73,6 +84,15 @@ const InicioClientes=()=>{
     const onModalClose = () => {
         setDebeMostrarModal(false)
     }
+    /*const editarProyectoModalHandler = (id) => {
+        setModoFormulario("edicion")
+        setDebeMostrarModal(true)
+    }*/
+
+    if(mostrarContenido != true){
+        return <div></div>
+      }
+      
     return <div className="container">
         <Navegador lisClass={clasesNav}></Navegador>
         <div className="row mt-4">

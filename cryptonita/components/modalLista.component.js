@@ -30,7 +30,7 @@ const ModalLista = (props) => {
                         <label htmlFor="FechaH" className="form-label mt-1">Fecha y Hora</label>
                         <input type="text" className="form-control" id="FechaH" defaultValue={props.datosOp.fecha.substring(0,10)+" "+props.datosOp.hora.substring(0,8)} readOnly />
                         <label htmlFor="cliente" className="form-label mt-1">Cliente</label>
-                        <input type="text" className="form-control" id="cliente" defaultValue={props.datosOp.idUsuario} readOnly />
+                        <input type="text" className="form-control" id="cliente" defaultValue={props.datosOp.nombreCliente} readOnly />
                         <label htmlFor="tipo" className="form-label mt-1" >Tipo de operacion</label>
                         <input type="text" className="form-control" id="tipo" defaultValue={props.datosOp.tipoOperacion} readOnly />
                     </div>
