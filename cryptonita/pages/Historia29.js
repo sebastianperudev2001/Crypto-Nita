@@ -32,5 +32,5 @@ export default function Historia29() {
         <div className="col-md-2"></div>
       </div>
     </div>
-  );
+  );  
 }
