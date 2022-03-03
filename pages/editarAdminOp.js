@@ -81,7 +81,7 @@ export default function CompraBTC() {
         setMostrarModal(false)
         let transacciones = await llamarHTTP()
         setListadoTransacciones(transacciones)
-      },1000)
+      },2300)
     }
   }
 
