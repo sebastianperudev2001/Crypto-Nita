@@ -36,16 +36,13 @@ export default function CompraBTC() {
   }
 
   useEffect(async () => {
-<<<<<<< HEAD
     let montoTotal=0;
-=======
     const admin = localStorage.getItem("esAdmin")
     if(admin != "true"){
       location.href="/"
       return
     }
     setMostrarContenido(true)
->>>>>>> 035175fd3c6c701bcb7e33cb05d7c3fc7a8060ac
     let transacciones = await llamarHTTP()
     setListadoTransacciones(transacciones)
     for(let trans of transacciones){
