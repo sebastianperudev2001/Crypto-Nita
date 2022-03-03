@@ -24,7 +24,7 @@ const guardarDataPaso02 = async (id, correoUser, contraUser, telefonoUser) => {
   usuarioPaso02.correo = correoUser;
   usuarioPaso02.password = contraUser;
   usuarioPaso02.telefono = telefonoUser;
-  usuarioPaso02.estado = 'inactivo';
+  usuarioPaso02.estado = 'Pendiente';
 
   await usuarioPaso02.save();
 };
@@ -38,4 +38,9 @@ const validacionInicioSesion = async (correoUser) => {
   return usuario;
 };
 
-export { guardarDataPaso01, guardarDataPaso02, validacionInicioSesion };
+export {
+  guardarDataPaso01,
+  guardarDataPaso02,
+  validacionInicioSesion,
+  findUsuario,
+};

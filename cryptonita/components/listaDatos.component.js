@@ -60,12 +60,13 @@ const Listado = (props) => {
     if (props.modo == "cliente") {
         return <div className="row container mt-4">
             <div className="col" />
-            <div className="col-8 table-responsive">
-                <table className="table">
+            <div className="table-wrapper-scroll-y my-custom-scrollbar2">
+                <table className="table table-bordered table-striped mb-0">
                     <thead>
                         <tr>
                             <th>Id</th>
                             <th>Nombre</th>
+                            <th>Apellido</th>
                             <th>Correo</th>
                             <th>Teléfono</th>
                             <th>*</th>
@@ -77,9 +78,13 @@ const Listado = (props) => {
                                 return <tr key={cliente.id}>
                                     <td>{cliente.id}</td>
                                     <td>{cliente.nombre}</td>
+                                    <td>{cliente.apellido}</td>
                                     <td>{cliente.correo}</td>
                                     <td>{cliente.telefono}</td>
-                                    <td><ButtonLink nombre="Editar" editar={props.editar} color="btn btn-warning" modo="cliente" /></td>
+                                    <td><button className="btn btn-warning" onClick={ ()=> {
+                                            props.onEditarCliente(cliente.id)
+                                        }}>
+                                        editar</button></td>
                                 </tr>
                             })
                         }

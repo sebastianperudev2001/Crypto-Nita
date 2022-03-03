@@ -1,7 +1,7 @@
 //import '../styles/globals.css';
 import Head from 'next/head';
 import '../styles/inicio.css';
-
+import '../styles/scrollTable.css';
 function MyApp({ Component, pageProps }) {
   return (
     <>
