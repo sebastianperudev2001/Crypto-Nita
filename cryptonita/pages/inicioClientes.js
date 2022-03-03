@@ -13,10 +13,16 @@ const InicioClientes=()=>{
     const [posicion, setPosicion]=useState(0)
     const [listadoProyectos, setListadoProyectos] = useState([])
     const [modoFormulario, setModoFormulario] = useState("nuevo") // modo: nuevo | edicion
+    const [mostrarContenido,setMostrarContenido] = useState(false)
 
-    /*useEffect(() => {
-        setListadoProyectos(obtenerProyectos())
-    }, [])*/
+  useEffect(async () => {
+    const admin = localStorage.getItem("esAdmin")
+    if(admin != "true"){
+      location.href="/"
+      return
+    }
+    setMostrarContenido(true)
+  }, [])
 
     const butNuevoOnClick = (pos) => {
         setModoFormulario("nuevo")
@@ -32,6 +38,11 @@ const InicioClientes=()=>{
         setModoFormulario("edicion")
         setDebeMostrarModal(true)
     }*/
+
+    if(mostrarContenido != true){
+        return <div></div>
+      }
+      
     return <div className="container">
         <Navegador lisClass={clasesNav}></Navegador>
         <div className="row mt-4">
