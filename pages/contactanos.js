@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BotonMenuPrincipal from '../components/botonMenuPrincipal.component';
+import BotonMenuPrincipal from '../components/BotonMenuPrincipal.component';
 import Footer from '../components/Footer.component';
 
 const contactanos = () => {
