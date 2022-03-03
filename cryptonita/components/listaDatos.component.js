@@ -18,18 +18,6 @@ const Listado = (props) => {
 
     if (props.modo == "admin") {
         return <div className="row container mt-4">
-            <div className="col-md d-flex align-items-center"/>
-            <div className="col-md"/>
-            <div className="col-md-2 container">
-                <div className="card">
-                    <div className="card-header">
-                        <h6>Monto total</h6>
-                    </div>
-                    <div className="card-body">
-                        <p></p>
-                    </div>
-                </div>
-            </div>
             <div className="row container mt-2">
                 <div className="col-md" />
                 <div className="col-md-10 table-responsive">
