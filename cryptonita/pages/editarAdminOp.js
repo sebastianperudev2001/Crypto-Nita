@@ -8,6 +8,7 @@ export default function CompraBTC() {
   const clasesNav = ['nav-link', 'nav-link', 'nav-link active'];
   const [ListadoTransacciones, setListadoTransacciones] = useState([]);
   const [MostrarModal, setMostrarModal] = useState(false);
+  const [total, setTotal]= useState(0)
   const [OpEnEdicion, setOperacion] = useState({
     id: '1',
     fecha: '--------------',
@@ -29,8 +30,19 @@ export default function CompraBTC() {
   }
 
   useEffect(async () => {
+    let montoTotal=0;
     let transacciones = await llamarHTTP()
     setListadoTransacciones(transacciones)
+    for(let trans of transacciones){
+      
+      if (trans.tipoOperacion == 'Compra'){
+        montoTotal+=(trans.monto*trans.tipoCambio)
+      }else{
+        montoTotal+=trans.monto
+      }
+    }
+    setTotal(montoTotal)
+
   }, [])
 
   const ocultarModal = () => {
@@ -66,6 +78,11 @@ export default function CompraBTC() {
     <div className="container">
       <Navegador lisClass={clasesNav}></Navegador>
       <h1>Editar operaciones</h1>
+      <div class="card text-white bg-secondary mb-3 col-2">
+          <div class="card-body">
+            <p class="card-text">Total: {total} BTC</p>
+          </div>
+        </div>
 
       <main>
         <Listado
